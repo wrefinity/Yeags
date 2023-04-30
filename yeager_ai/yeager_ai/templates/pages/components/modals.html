@@ -1,0 +1,68 @@
+{% extends "base.html" %} 
+{% load slippers %} 
+{% block content %}
+<div class="content d-flex flex-column flex-column-fluid" id="kt_content">
+
+{% comment %} invite_friends with modal  {% endcomment %}
+{% #invite_friends %}
+{% /invite_friends %}
+
+{% #view_users %}
+{% /view_users %}
+
+{% #file_list_card data="db_data" %}
+{% /file_list_card %}
+
+</div>
+
+
+{% endblock content %}
+
+{% block drawer %}
+{% #activity_drawer data="db_data"%}
+{% /activity_drawer%}
+{% #aside_right data="db_data"%}
+{% /aside_right%}
+{% #cart_drawer data="db_data"%}
+{% /cart_drawer%}
+{% #chat_drawer data="db_data"%}
+{% /chat_drawer%}
+{% #scroller data="db_data"%}
+{% /scroller%}
+{% endblock drawer %} 
+
+{% block modal %}
+{% #create_app_modal data="db_data"%}
+{% /create_app_modal%}
+
+{% #invite_modal data="db_data"%}
+{% /invite_modal%}
+
+{% #plans_modal data="db_data"%}
+{% /plans_modal%}
+
+{% #user_search_modal data="db_data"%}
+{% /user_search_modal%}
+
+{% #users_modal data="db_data"%}
+{% /users_modal %}
+
+{% #create_api_key_modal data="db_data" %}
+{% /create_api_key_modal %}
+
+{% #create_campaign_modal data="db_data" %}
+{% /create_campaign_modal %}
+
+{% #create_project_modal data="db_data" %}
+{% /create_project_modal %}
+
+{% #two_factor_modal data="db_data" %}
+{% /two_factor_modal %}
+
+{% #select_location_modal data="db_data" %}
+{% /select_location_modal %}
+
+{% #upload_file_modal data="db_data" %}
+{% /upload_file_modal %}
+
+{% endblock modal %} 

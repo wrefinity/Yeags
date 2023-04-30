@@ -1,0 +1,98 @@
+{% extends "base.html" %} 
+{% load slippers %} 
+{% block content %}
+{% comment %} aside goes here  {% endcomment %}
+{% #aside_pro data="db_data"%}
+{% /aside_pro%}
+<div class="wrapper d-flex  flex-column flex-row-fluid" id="kt_wrapper">
+    {% #header heading="Activity" %}
+    {% /header %}
+    <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
+    <!--begin::Container-->
+    <div class="card">
+        <!--begin::Card head-->
+        {% #agent_activity_header %}
+        {% /agent_activity_header %}
+        
+        <!--end::Card head-->
+    
+        <!--begin::Card body-->
+        <div class="card-body">
+            <!--begin::Tab Content-->
+            <div class="tab-content">
+                <!--begin::Tab panel-->
+                <div id="kt_activity_today" class="card-body p-0 tab-pane fade show active" role="tabpanel" aria-labelledby="kt_activity_today_tab">
+                    <!--begin::Timeline-->
+    <div class="timeline">
+        <!--begin::Timeline item-->
+    {% #agent_timeline_one %}
+    {% /agent_timeline_one %}
+
+    <!--end::Timeline item-->
+        <!--begin::Timeline item-->
+    {% #agent_timeline_item1 %}
+    {% /agent_timeline_item1 %}
+
+    <!--end::Timeline item-->
+        <!--begin::Timeline item-->
+    {% #agent_timeline_two %}
+    {% /agent_timeline_two %}
+
+    <!--end::Timeline item-->
+        <!--begin::Timeline item-->
+        {% #agent_timeline_item2 %}
+        {% /agent_timeline_item2 %}
+    <!--end::Timeline item-->
+        <!--begin::Timeline item-->
+        {% #agent_timeline_three %}
+        {% /agent_timeline_three %}
+    <!--end::Timeline item-->    
+        <!--begin::Timeline item-->
+        {% #agent_timeline_item3 %}
+        {% /agent_timeline_item3 %}
+    <!--end::Timeline item-->
+        <!--begin::Timeline item-->
+    {% #agent_timeline_four %}
+    {% /agent_timeline_four %}
+    <!--end::Timeline item-->
+        <!--begin::Timeline item-->
+        {% #agent_timeline_item4 %}
+        {% /agent_timeline_item4 %}
+        <!--end::Timeline item-->
+    <!--end::Timeline item--> </div>
+    <!--end::Timeline-->            </div>
+                <!--end::Tab panel-->
+            </div>
+            <!--end::Tab Content-->
+        </div>
+        <!--end::Card body-->
+    </div>
+    </div>
+</div>
+{% endblock content %}
+
+{% block drawer %}
+{% #activity_drawer data="db_data"%}
+{% /activity_drawer%}
+{% #aside_right data="db_data"%}
+{% /aside_right%}
+{% #cart_drawer data="db_data"%}
+{% /cart_drawer%}
+{% #chat_drawer data="db_data"%}
+{% /chat_drawer%}
+{% #scroller data="db_data"%}
+{% /scroller%}
+{% endblock drawer %} 
+
+{% block modal %}
+{% #create_app_modal data="db_data"%}
+{% /create_app_modal%}
+{% #invite_modal data="db_data"%}
+{% /invite_modal%}
+{% #plans_modal data="db_data"%}
+{% /plans_modal%}
+{% #user_search_modal data="db_data"%}
+{% /user_search_modal%}
+{% #users_modal data="db_data"%}
+{% /users_modal %}
+{% endblock modal %} 

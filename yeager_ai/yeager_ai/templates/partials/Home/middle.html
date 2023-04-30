@@ -1,0 +1,48 @@
+<div class="d-flex flex-wrap flex-stack mb-6">
+    <!--begin::Heading-->
+    <h3 class="fw-bold my-2">
+      My Projects
+      <span class="fs-6 text-gray-400 fw-semibold ms-1">Active</span>
+    </h3>
+    <!--end::Heading-->
+  
+    <!--begin Actions-->
+    <div class="d-flex flex-wrap flex-stack  my-2">
+      <div class="me-2">
+        <!--begin::Select-->
+        <select
+          name="status"
+          data-control="select2"
+          data-hide-search="true"
+          class="form-select form-select-sm bg-body border-body w-125px select2-hidden-accessible"
+          data-select2-id="select2-data-10-2oz4"
+          tabindex="-1"
+          aria-hidden="true"
+          data-kt-initialized="1"
+        >
+          <option
+            value="Active"
+            selected=""
+            data-select2-id="select2-data-12-j6tr"
+          >
+            Active
+          </option>
+          <option value="Approved">In Progress</option>
+          <option value="Declined">To Do</option>
+          <option value="In Progress">Completed</option></select
+        >
+        </select>
+        <!--end::Select-->
+      </div>
+  
+      <button
+        href="#"
+        class="btn btn-primary btn-sm"
+        data-bs-toggle="modal"
+        data-bs-target="#kt_modal_create_project"
+      >
+        New Project
+      </button>
+    </div>
+    <!--end::Actions-->
+  </div>

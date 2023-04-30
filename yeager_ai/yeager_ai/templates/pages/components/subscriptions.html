@@ -1,0 +1,63 @@
+{% extends "base.html" %} 
+{% load slippers %} 
+{% block content %}
+<div class="content d-flex flex-column flex-column-fluid" id="kt_content">
+
+    
+    {% #customer_card %}
+    {% /customer_card %}
+    
+    {% #customer_card_pricing %}
+    {% /customer_card_pricing %}
+    
+    {% #customer_detail_summary %}
+    {% /customer_detail_summary %}
+    
+    {% #customer_options %}
+    {% /customer_options %}
+
+    {% #customer_payment_method_card %}
+    {% /customer_payment_method_card %}
+
+    {% #subscription_invoices %}
+    {% /subscription_invoices %}
+
+    {% #subscription_product_detail %}
+    {% /subscription_product_detail %}
+
+    {% #subscription_recent_event %}
+    {% /subscription_recent_event %}
+
+    {% #subscription_view_summary %}
+    {% /subscription_view_summary %}
+
+</div>
+
+
+{% endblock content %}
+
+{% block drawer %}
+{% #activity_drawer data="db_data"%}
+{% /activity_drawer%}
+{% #aside_right data="db_data"%}
+{% /aside_right%}
+{% #cart_drawer data="db_data"%}
+{% /cart_drawer%}
+{% #chat_drawer data="db_data"%}
+{% /chat_drawer%}
+{% #scroller data="db_data"%}
+{% /scroller%}
+{% endblock drawer %} 
+
+{% block modal %}
+{% #create_app_modal data="db_data"%}
+{% /create_app_modal%}
+{% #invite_modal data="db_data"%}
+{% /invite_modal%}
+{% #plans_modal data="db_data"%}
+{% /plans_modal%}
+{% #user_search_modal data="db_data"%}
+{% /user_search_modal%}
+{% #users_modal data="db_data"%}
+{% /users_modal %}
+{% endblock modal %} 

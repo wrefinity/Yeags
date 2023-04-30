@@ -1,0 +1,82 @@
+{% extends "base.html" %} 
+{% load slippers %} 
+{% block content %}
+{% comment %} aside goes here  {% endcomment %}
+{% #aside_pro data="db_data"%}
+{% /aside_pro%}
+<div class="wrapper d-flex  flex-column flex-row-fluid" id="kt_wrapper">
+    {% #header heading="Dashboard" %}
+    {% /header %}
+    <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
+    <!--begin::Container-->
+    <div class="container-xxl" id="kt_content_container">   
+        {% comment %} Layer one  {% endcomment %}
+        <div class="row gy-5 g-xl-8">
+            {% #widget_sale %}
+            {% /widget_sale %}
+            {% #widget_member_stats %}
+            {% /widget_member_stats %}
+        </div>
+        {% comment %} Layer Two  {% endcomment %}
+        <div class="row gy-5 g-xl-8">
+            {% #widget_weekly_income %}
+            {% /widget_weekly_income %}
+            {% #widget_competitor %}
+            {% /widget_competitor %}
+            {% #widget_trend %}
+            {% /widget_trend %}
+        </div>
+        {% comment %} Layer Three  {% endcomment %}
+        
+        <div class="row gy-5 g-xl-8">
+            {% #widget_todo %}
+            {% /widget_todo %}
+            {% #widget_member_stats %}
+            {% /widget_member_stats %}
+        </div>
+        {% comment %} Layer Four  {% endcomment %}
+        <div class="row gy-5 g-xl-8">
+            {% #widget_authors %}
+            {% /widget_authors %}
+            {% #widget_notification %}
+            {% /widget_notification %}
+            {% #widget_trend %}
+            {% /widget_trend %}
+        </div>
+        {% comment %} Layer Five  {% endcomment %}
+        <div class="row gy-5 g-xl-8">
+            {% #widget_trend_graph %}
+            {% /widget_trend_graph %}
+            {% #widget_lastest_products %}
+            {% /widget_lastest_products %}
+        </div>
+    </div>
+    </div>
+</div>
+{% endblock content %}
+
+{% block drawer %}
+{% #activity_drawer data="db_data"%}
+{% /activity_drawer%}
+{% #aside_right data="db_data"%}
+{% /aside_right%}
+{% #cart_drawer data="db_data"%}
+{% /cart_drawer%}
+{% #chat_drawer data="db_data"%}
+{% /chat_drawer%}
+{% #scroller data="db_data"%}
+{% /scroller%}
+{% endblock drawer %} 
+
+{% block modal %}
+{% #create_app_modal data="db_data"%}
+{% /create_app_modal%}
+{% #invite_modal data="db_data"%}
+{% /invite_modal%}
+{% #plans_modal data="db_data"%}
+{% /plans_modal%}
+{% #user_search_modal data="db_data"%}
+{% /user_search_modal%}
+{% #users_modal data="db_data"%}
+{% /users_modal %}
+{% endblock modal %} 

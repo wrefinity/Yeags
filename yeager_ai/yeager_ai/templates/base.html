@@ -1,0 +1,181 @@
+{% load static i18n %}<!DOCTYPE html>
+{% load slippers %}
+{% get_current_language as LANGUAGE_CODE %}
+<html lang="{{ LANGUAGE_CODE }}">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>{% block title %}YeagerAI Web App{% endblock title %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="YeagerAI Web Applications">
+    <meta name="author" content="YeagerAI LLC">
+    
+    <link rel="icon" href="{% static 'images/favicons/favicon.ico' %}">
+    {% block css %}
+    <!-- Your stuff: Third-party CSS libraries go here -->
+    
+    <!-- This file stores project-specific CSS -->
+    <link href="{% static 'css/project.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/css/project.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/plugins/custom/datatables/datatables.bundle.css'%}" rel="stylesheet" type="text/css" />
+		<link href="{% static 'assets/plugins/custom/vis-timeline/vis-timeline.bundle.css' %}" rel="stylesheet" type="text/css" />
+    <link href="{% static 'assets/plugins/global/plugins.bundle.css' %}" rel="stylesheet" type="text/css"/>
+    <link href="{% static 'assets/plugins/custom/datatables/datatables.bundle.css' %}" rel="stylesheet" type="text/css" />
+		<link href="{% static 'assets/css/style.bundle.css' %}" rel="stylesheet" type="text/css" />
+    {% endblock %}
+    <!-- Le javascript
+    ================================================== -->
+    {# Placed at the top of the document so pages load faster with defer #}
+    {% block javascript %}
+      <!-- Vendor dependencies bundled as one file -->
+      <script defer src="{% static '/js/vendors.min.js' %}"></script>
+
+      <!-- place project specific Javascript in this file -->
+      <script defer src="{% static 'js/project.js' %}"></script>
+      <script src="{% static 'assets/plugins/global/plugins.bundle.js' %}"></script>
+      
+      {% comment %} <script src="{% static 'assets/js/scripts.bundle.js' %}"></script> {% endcomment %}
+		<script src="{% static 'assets/js/scripts.bundle.js' %}"></script>
+		<!--end::Global Javascript Bundle-->
+		<!--begin::Vendors Javascript(used for this page only)-->
+    <!--begin::Vendors Javascript(used for this page only)-->
+    <script src="{% static 'assets/js/custom/apps/projects/project/project.js' %}"></script>
+		  <script src="{% static 'assets/plugins/custom/vis-timeline/vis-timeline.bundle.js' %}"></script>
+      <script src="{% static 'assets/plugins/custom/fslightbox/fslightbox.bundle.js' %}"></script>
+      <script src="{% static 'assets/plugins/custom/datatables/datatables.bundle.js' %}"></script>
+      <script src="{% static 'assets/js/widgets.bundle.js' %}"></script>
+      <script src="{% static 'assets/js/custom/widgets.js' %}"></script>
+      <script src="{% static 'assets/js/custom/utilities/modals/upgrade-plan.js' %}"></script>
+      <script src="{% static 'assets/js/custom/utilities/modals/create-app.js' %}"></script>
+      <script src="{% static 'assets/js/custom/utilities/modals/users-search.js' %}"></script>
+      <script src="{% static 'assets/plugins/custom/datatables/datatables.bundle.js' %}"></script>
+      <script src="{% static 'assets/js/custom/pages/user-profile/general.js ' %}"></script>
+      <script src="{% static 'assets/js/custom/apps/chat/chat.js ' %}"></script>
+      
+      <script src="{% static 'assets/js/custom/utilities/modals/create-app.js ' %}"></script>
+      <script src="{% static 'assets/js/custom/utilities/modals/offer-a-deal/type.js ' %}"></script>
+      <script src="{% static 'assets/js/custom/utilities/modals/offer-a-deal/details.js ' %}"></script>
+      <script src="{% static 'assets/js/custom/utilities/modals/offer-a-deal/finance.js ' %}"></script>
+      <script src="{% static 'assets/js/custom/utilities/modals/offer-a-deal/complete.js ' %}"></script>
+      <script src="{% static 'assets/js/custom/utilities/modals/offer-a-deal/main.js ' %}"></script>
+      <script src="{% static 'assets/js/custom/utilities/modals/create-project/type.js ' %}"></script>
+      <script src="{% static 'assets/js/custom/utilities/modals/create-project/budget.js ' %}"></script>
+      <script src="{% static 'assets/js/custom/utilities/modals/create-project/settings.js ' %}"></script>
+      <script src="{% static 'assets/js/custom/utilities/modals/create-project/team.js ' %}"></script>
+      <script src="{% static 'assets/js/custom/utilities/modals/create-project/targets.js ' %}"></script>
+      <script src="{% static 'assets/js/custom/utilities/modals/create-project/files.js ' %}"></script>
+      <script src="{% static 'assets/js/custom/utilities/modals/create-project/complete.js ' %}"></script>
+      <script src="{% static 'assets/js/custom/utilities/modals/create-project/main.js ' %}"></script>
+      <script src="{% static 'assets/js/custom/utilities/modals/users-search.js ' %}"></script>
+      
+      {% comment %} user functionalities {% endcomment %}
+      <script src="{% static 'assets/js/custom/apps/user-management/users/view/view.js' %}"></script>
+      <script src="{% static 'assets/js/custom/apps/user-management/users/view/update-details.js' %}"></script>
+      <script src="{% static 'assets/js/custom/apps/user-management/users/view/add-schedule.js' %}"></script>
+      <script src="{% static 'assets/js/custom/apps/user-management/users/view/add-task.js' %}"></script>
+      <script src="{% static 'assets/js/custom/apps/user-management/users/view/update-email.js' %}"></script>
+      <script src="{% static 'assets/js/custom/apps/user-management/users/view/update-password.js' %}"></script>
+      <script src="{% static 'assets/js/custom/apps/user-management/users/view/update-role.js' %}"></script>
+      <script src="{% static 'assets/js/custom/apps/user-management/users/view/add-auth-app.js' %}"></script>
+      <script src="{% static 'assets/js/custom/apps/user-management/users/view/add-one-time-password.js' %}"></script>
+      <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+      <script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
+      <script src="https://cdn.amcharts.com/lib/5/percent.js"></script>
+      <script src="https://cdn.amcharts.com/lib/5/radar.js"></script>
+      <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
+      <script src="https://cdn.amcharts.com/lib/5/map.js"></script>
+      <script src="https://cdn.amcharts.com/lib/5/geodata/worldLow.js"></script>
+      <script src="https://cdn.amcharts.com/lib/5/geodata/continentsLow.js"></script>
+      <script src="https://cdn.amcharts.com/lib/5/geodata/usaLow.js"></script>
+      <script src="https://cdn.amcharts.com/lib/5/geodata/worldTimeZonesLow.js"></script>
+      <script src="https://cdn.amcharts.com/lib/5/geodata/worldTimeZoneAreasLow.js"></script>
+      <!--end::Custom Javascript-->
+
+    {% endblock javascript %}
+
+  </head>
+  <body id="kt_body" style="background-image: url()" class="header-fixed header-tablet-and-mobile-fixed aside-fixed aside-secondary-enabled">
+		<script>var defaultThemeMode = "light"; var themeMode; if ( document.documentElement ) { if ( document.documentElement.hasAttribute("data-bs-theme-mode")) { themeMode = document.documentElement.getAttribute("data-bs-theme-mode"); } else { if ( localStorage.getItem("data-bs-theme") !== null ) { themeMode = localStorage.getItem("data-bs-theme"); } else { themeMode = defaultThemeMode; } } if (themeMode === "system") { themeMode = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"; } document.documentElement.setAttribute("data-bs-theme", themeMode); }</script>
+    {% comment %} 
+    <div class="mb-1">
+      <nav class="navbar navbar-expand-md navbar-light bg-light">
+        <div class="container-fluid">
+          <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <a class="navbar-brand" href="{% url 'home' %}">YeagerAI Web App</a>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="{% url 'home' %}">Home <span class="visually-hidden">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'about' %}">About</a>
+              </li>
+              {% if request.user.is_authenticated %}
+                <li class="nav-item">
+                  {# URL provided by django-allauth/account/urls.py #}
+                  <a class="nav-link" href="{% url 'users:detail' request.user.username  %}">{% translate "My Profile" %}</a>
+                </li>
+                <li class="nav-item">
+                  {# URL provided by django-allauth/account/urls.py #}
+                  <a class="nav-link" href="{% url 'account_logout' %}">{% translate "Sign Out" %}</a>
+                </li>
+              {% else %}
+                {% if ACCOUNT_ALLOW_REGISTRATION %}
+              <li class="nav-item">
+                {# URL provided by django-allauth/account/urls.py #}
+                <a id="sign-up-link" class="nav-link" href="{% url 'account_signup' %}">{% translate "Sign Up" %}</a>
+              </li>
+              {% endif %}
+                <li class="nav-item">
+                  {# URL provided by django-allauth/account/urls.py #}
+                  <a id="log-in-link" class="nav-link" href="{% url 'account_login' %}">{% translate "Sign In" %}</a>
+                </li>
+              {% endif %}
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+    </div> 
+    {% endcomment %}
+
+    <div class="d-flex flex-column flex-root" data-select2-id="select2-data-167-29ev">
+
+      <div class="page d-flex flex-row flex-column-fluid">
+        
+
+        {% if messages %}
+          {% for message in messages %}
+            <div class="alert alert-dismissible {% if message.tags %}alert-{{ message.tags }}{% endif %}">
+              {{ message }}
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+          {% endfor %}
+        {% endif %}
+
+        {% block content %}
+          <p>Use this document as a way to quick start any new project.</p>
+        {% endblock content %}
+      </div>  
+
+    </div>
+
+    {% block drawer %}
+    {% endblock drawer %} 
+    {% block modal %}
+    {% endblock modal %} 
+
+    {% block inline_javascript %}
+    {% comment %}
+    Script tags with only code, no src (defer by default). To run
+    with a "defer" so that you run inline code:
+    <script>
+      window.addEventListener('DOMContentLoaded', () => {/* Run whatever you want */});
+    </script>
+    {% endcomment %}
+    {% endblock inline_javascript %}
+  </body>
+</html>

@@ -1,0 +1,3234 @@
+{% load static %}
+<!--begin::Products-->
+<div class="card card-flush">
+  <!--begin::Card header-->
+  <div class="card-header align-items-center py-5 gap-2 gap-md-5">
+    <!--begin::Card title-->
+    <div class="card-title">
+      <!--begin::Search-->
+      <div class="d-flex align-items-center position-relative my-1">
+        <i class="ki-duotone ki-magnifier fs-2 position-absolute ms-4">
+          <span class="path1"></span>
+          <span class="path2"></span>
+        </i>
+        <input
+          type="text"
+          data-kt-ecommerce-order-filter="search"
+          class="form-control form-control-solid w-250px ps-12"
+          placeholder="Search Report"
+        />
+      </div>
+      <!--end::Search-->
+      <!--begin::Export buttons-->
+      <div id="kt_ecommerce_report_views_export" class="d-none"></div>
+      <!--end::Export buttons-->
+    </div>
+    <!--end::Card title-->
+    <!--begin::Card toolbar-->
+    <div class="card-toolbar flex-row-fluid justify-content-end gap-5">
+      <!--begin::Daterangepicker-->
+      <input
+        class="form-control form-control-solid w-100 mw-250px"
+        placeholder="Pick date range"
+        id="kt_ecommerce_report_views_daterangepicker"
+      />
+      <!--end::Daterangepicker-->
+      <!--begin::Filter-->
+      <div class="w-150px">
+        <!--begin::Select2-->
+        <select
+          class="form-select form-select-solid"
+          data-control="select2"
+          data-hide-search="true"
+          data-placeholder="Rating"
+          data-kt-ecommerce-order-filter="rating"
+        >
+          <option></option>
+          <option value="all">All</option>
+          <option value="rating-5">5 Stars</option>
+          <option value="rating-4">4 Stars</option>
+          <option value="rating-3">3 Stars</option>
+          <option value="rating-2">2 Stars</option>
+          <option value="rating-1">1 Stars</option>
+        </select>
+        <!--end::Select2-->
+      </div>
+      <!--end::Filter-->
+      <!--begin::Export dropdown-->
+      <button
+        type="button"
+        class="btn btn-light-primary"
+        data-kt-menu-trigger="click"
+        data-kt-menu-placement="bottom-end"
+      >
+        <i class="ki-duotone ki-exit-up fs-2">
+          <span class="path1"></span>
+          <span class="path2"></span> </i
+        >Export Report
+      </button>
+      <!--begin::Menu-->
+      <div
+        id="kt_ecommerce_report_views_export_menu"
+        class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-semibold fs-7 w-200px py-4"
+        data-kt-menu="true"
+      >
+        <!--begin::Menu item-->
+        <div class="menu-item px-3">
+          <a href="#" class="menu-link px-3" data-kt-ecommerce-export="copy"
+            >Copy to clipboard</a
+          >
+        </div>
+        <!--end::Menu item-->
+        <!--begin::Menu item-->
+        <div class="menu-item px-3">
+          <a href="#" class="menu-link px-3" data-kt-ecommerce-export="excel"
+            >Export as Excel</a
+          >
+        </div>
+        <!--end::Menu item-->
+        <!--begin::Menu item-->
+        <div class="menu-item px-3">
+          <a href="#" class="menu-link px-3" data-kt-ecommerce-export="csv"
+            >Export as CSV</a
+          >
+        </div>
+        <!--end::Menu item-->
+        <!--begin::Menu item-->
+        <div class="menu-item px-3">
+          <a href="#" class="menu-link px-3" data-kt-ecommerce-export="pdf"
+            >Export as PDF</a
+          >
+        </div>
+        <!--end::Menu item-->
+      </div>
+      <!--end::Menu-->
+      <!--end::Export dropdown-->
+    </div>
+    <!--end::Card toolbar-->
+  </div>
+  <!--end::Card header-->
+  <!--begin::Card body-->
+  <div class="card-body pt-0">
+    <!--begin::Table-->
+    <table
+      class="table align-middle table-row-dashed fs-6 gy-5"
+      id="kt_ecommerce_report_views_table"
+    >
+      <thead>
+        <tr class="text-start text-gray-400 fw-bold fs-7 text-uppercase gs-0">
+          <th class="min-w-150px">Product</th>
+          <th class="text-end min-w-100px">SKU</th>
+          <th class="text-end min-w-100px">Rating</th>
+          <th class="text-end min-w-100px">Price</th>
+          <th class="text-end min-w-70px">Viewed</th>
+          <th class="text-end min-w-100px">Percent</th>
+        </tr>
+      </thead>
+      <tbody class="fw-semibold text-gray-600">
+        <tr>
+          <td>
+            <div class="d-flex align-items-center">
+              <!--begin::Thumbnail-->
+              <a
+                href="{% url 'products_edit' %}"
+                class="symbol symbol-50px"
+              >
+                <span
+                  class="symbol-label"
+                  style="
+                    background-image: url({% static 'assets/media//stock/ecommerce/38.gif' %});
+                  "
+                ></span>
+              </a>
+              <!--end::Thumbnail-->
+              <div class="ms-5">
+                <!--begin::Title-->
+                <a
+                  href="{% url 'products_edit' %}"
+                  class="text-gray-800 text-hover-primary fs-5 fw-bold"
+                  data-kt-ecommerce-product-filter="product_name"
+                  >Product 38</a
+                >
+                <!--end::Title-->
+              </div>
+            </div>
+          </td>
+          <td class="text-end pe-0">
+            <span class="fw-bold">03373006</span>
+          </td>
+          <td
+            class="text-end pe-0"
+            data-order="rating-2"
+            data-filter="rating-2"
+          >
+            <div class="rating justify-content-end">
+              <div class="rating-label checked">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label checked">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+            </div>
+          </td>
+          <td class="text-end pe-0">
+            <span>$80.00</span>
+          </td>
+          <td class="text-end pe-0">
+            <span>236000</span>
+          </td>
+          <td class="text-end pe-0">23.6%</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="d-flex align-items-center">
+              <!--begin::Thumbnail-->
+              <a
+                href="{% url 'products_edit' %}"
+                class="symbol symbol-50px"
+              >
+                <span
+                  class="symbol-label"
+                  style="
+                    background-image: url({% static 'assets/media//stock/ecommerce/25.gif' %});
+                  "
+                ></span>
+              </a>
+              <!--end::Thumbnail-->
+              <div class="ms-5">
+                <!--begin::Title-->
+                <a
+                  href="{% url 'products_edit' %}"
+                  class="text-gray-800 text-hover-primary fs-5 fw-bold"
+                  data-kt-ecommerce-product-filter="product_name"
+                  >Product 25</a
+                >
+                <!--end::Title-->
+              </div>
+            </div>
+          </td>
+          <td class="text-end pe-0">
+            <span class="fw-bold">01940009</span>
+          </td>
+          <td
+            class="text-end pe-0"
+            data-order="rating-1"
+            data-filter="rating-1"
+          >
+            <div class="rating justify-content-end">
+              <div class="rating-label checked">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+            </div>
+          </td>
+          <td class="text-end pe-0">
+            <span>$16.00</span>
+          </td>
+          <td class="text-end pe-0">
+            <span>209500</span>
+          </td>
+          <td class="text-end pe-0">20.95%</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="d-flex align-items-center">
+              <!--begin::Thumbnail-->
+              <a
+                href="{% url 'products_edit' %}"
+                class="symbol symbol-50px"
+              >
+                <span
+                  class="symbol-label"
+                  style="
+                    background-image: url({% static 'assets/media//stock/ecommerce/46.gif' %});
+                  "
+                ></span>
+              </a>
+              <!--end::Thumbnail-->
+              <div class="ms-5">
+                <!--begin::Title-->
+                <a
+                  href="{% url 'products_edit' %}"
+                  class="text-gray-800 text-hover-primary fs-5 fw-bold"
+                  data-kt-ecommerce-product-filter="product_name"
+                  >Product 46</a
+                >
+                <!--end::Title-->
+              </div>
+            </div>
+          </td>
+          <td class="text-end pe-0">
+            <span class="fw-bold">04593004</span>
+          </td>
+          <td
+            class="text-end pe-0"
+            data-order="rating-1"
+            data-filter="rating-1"
+          >
+            <div class="rating justify-content-end">
+              <div class="rating-label checked">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+            </div>
+          </td>
+          <td class="text-end pe-0">
+            <span>$226.00</span>
+          </td>
+          <td class="text-end pe-0">
+            <span>187400</span>
+          </td>
+          <td class="text-end pe-0">18.74%</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="d-flex align-items-center">
+              <!--begin::Thumbnail-->
+              <a
+                href="{% url 'products_edit' %}"
+                class="symbol symbol-50px"
+              >
+                <span
+                  class="symbol-label"
+                  style="
+                    background-image: url({% static 'assets/media//stock/ecommerce/28.gif' %});
+                  "
+                ></span>
+              </a>
+              <!--end::Thumbnail-->
+              <div class="ms-5">
+                <!--begin::Title-->
+                <a
+                  href="{% url 'products_edit' %}"
+                  class="text-gray-800 text-hover-primary fs-5 fw-bold"
+                  data-kt-ecommerce-product-filter="product_name"
+                  >Product 28</a
+                >
+                <!--end::Title-->
+              </div>
+            </div>
+          </td>
+          <td class="text-end pe-0">
+            <span class="fw-bold">02970001</span>
+          </td>
+          <td
+            class="text-end pe-0"
+            data-order="rating-1"
+            data-filter="rating-1"
+          >
+            <div class="rating justify-content-end">
+              <div class="rating-label checked">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+            </div>
+          </td>
+          <td class="text-end pe-0">
+            <span>$234.00</span>
+          </td>
+          <td class="text-end pe-0">
+            <span>116020</span>
+          </td>
+          <td class="text-end pe-0">11.602%</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="d-flex align-items-center">
+              <!--begin::Thumbnail-->
+              <a
+                href="{% url 'products_edit' %}"
+                class="symbol symbol-50px"
+              >
+                <span
+                  class="symbol-label"
+                  style="
+                    background-image: url({% static 'assets/media//stock/ecommerce/30.gif' %});
+                  "
+                ></span>
+              </a>
+              <!--end::Thumbnail-->
+              <div class="ms-5">
+                <!--begin::Title-->
+                <a
+                  href="{% url 'products_edit' %}"
+                  class="text-gray-800 text-hover-primary fs-5 fw-bold"
+                  data-kt-ecommerce-product-filter="product_name"
+                  >Product 30</a
+                >
+                <!--end::Title-->
+              </div>
+            </div>
+          </td>
+          <td class="text-end pe-0">
+            <span class="fw-bold">01854007</span>
+          </td>
+          <td
+            class="text-end pe-0"
+            data-order="rating-2"
+            data-filter="rating-2"
+          >
+            <div class="rating justify-content-end">
+              <div class="rating-label checked">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label checked">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+            </div>
+          </td>
+          <td class="text-end pe-0">
+            <span>$247.00</span>
+          </td>
+          <td class="text-end pe-0">
+            <span>50216</span>
+          </td>
+          <td class="text-end pe-0">5.0216%</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="d-flex align-items-center">
+              <!--begin::Thumbnail-->
+              <a
+                href="{% url 'products_edit' %}"
+                class="symbol symbol-50px"
+              >
+                <span
+                  class="symbol-label"
+                  style="
+                    background-image: url({% static 'assets/media//stock/ecommerce/43.gif' %});
+                  "
+                ></span>
+              </a>
+              <!--end::Thumbnail-->
+              <div class="ms-5">
+                <!--begin::Title-->
+                <a
+                  href="{% url 'products_edit' %}"
+                  class="text-gray-800 text-hover-primary fs-5 fw-bold"
+                  data-kt-ecommerce-product-filter="product_name"
+                  >Product 43</a
+                >
+                <!--end::Title-->
+              </div>
+            </div>
+          </td>
+          <td class="text-end pe-0">
+            <span class="fw-bold">04474004</span>
+          </td>
+          <td
+            class="text-end pe-0"
+            data-order="rating-1"
+            data-filter="rating-1"
+          >
+            <div class="rating justify-content-end">
+              <div class="rating-label checked">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+            </div>
+          </td>
+          <td class="text-end pe-0">
+            <span>$264.00</span>
+          </td>
+          <td class="text-end pe-0">
+            <span>40173</span>
+          </td>
+          <td class="text-end pe-0">4.01728%</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="d-flex align-items-center">
+              <!--begin::Thumbnail-->
+              <a
+                href="{% url 'products_edit' %}"
+                class="symbol symbol-50px"
+              >
+                <span
+                  class="symbol-label"
+                  style="
+                    background-image: url({% static 'assets/media//stock/ecommerce/10.gif' %});
+                  "
+                ></span>
+              </a>
+              <!--end::Thumbnail-->
+              <div class="ms-5">
+                <!--begin::Title-->
+                <a
+                  href="{% url 'products_edit' %}"
+                  class="text-gray-800 text-hover-primary fs-5 fw-bold"
+                  data-kt-ecommerce-product-filter="product_name"
+                  >Product 10</a
+                >
+                <!--end::Title-->
+              </div>
+            </div>
+          </td>
+          <td class="text-end pe-0">
+            <span class="fw-bold">01839002</span>
+          </td>
+          <td
+            class="text-end pe-0"
+            data-order="rating-2"
+            data-filter="rating-2"
+          >
+            <div class="rating justify-content-end">
+              <div class="rating-label checked">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label checked">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+            </div>
+          </td>
+          <td class="text-end pe-0">
+            <span>$273.00</span>
+          </td>
+          <td class="text-end pe-0">
+            <span>32138</span>
+          </td>
+          <td class="text-end pe-0">3.21382%</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="d-flex align-items-center">
+              <!--begin::Thumbnail-->
+              <a
+                href="{% url 'products_edit' %}"
+                class="symbol symbol-50px"
+              >
+                <span
+                  class="symbol-label"
+                  style="
+                    background-image: url({% static 'assets/media//stock/ecommerce/44.gif' %});
+                  "
+                ></span>
+              </a>
+              <!--end::Thumbnail-->
+              <div class="ms-5">
+                <!--begin::Title-->
+                <a
+                  href="{% url 'products_edit' %}"
+                  class="text-gray-800 text-hover-primary fs-5 fw-bold"
+                  data-kt-ecommerce-product-filter="product_name"
+                  >Product 44</a
+                >
+                <!--end::Title-->
+              </div>
+            </div>
+          </td>
+          <td class="text-end pe-0">
+            <span class="fw-bold">01377006</span>
+          </td>
+          <td
+            class="text-end pe-0"
+            data-order="rating-1"
+            data-filter="rating-1"
+          >
+            <div class="rating justify-content-end">
+              <div class="rating-label checked">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+            </div>
+          </td>
+          <td class="text-end pe-0">
+            <span>$20.00</span>
+          </td>
+          <td class="text-end pe-0">
+            <span>25711</span>
+          </td>
+          <td class="text-end pe-0">2.57106%</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="d-flex align-items-center">
+              <!--begin::Thumbnail-->
+              <a
+                href="{% url 'products_edit' %}"
+                class="symbol symbol-50px"
+              >
+                <span
+                  class="symbol-label"
+                  style="
+                    background-image: url({% static 'assets/media//stock/ecommerce/39.gif' %});
+                  "
+                ></span>
+              </a>
+              <!--end::Thumbnail-->
+              <div class="ms-5">
+                <!--begin::Title-->
+                <a
+                  href="{% url 'products_edit' %}"
+                  class="text-gray-800 text-hover-primary fs-5 fw-bold"
+                  data-kt-ecommerce-product-filter="product_name"
+                  >Product 39</a
+                >
+                <!--end::Title-->
+              </div>
+            </div>
+          </td>
+          <td class="text-end pe-0">
+            <span class="fw-bold">02839006</span>
+          </td>
+          <td
+            class="text-end pe-0"
+            data-order="rating-5"
+            data-filter="rating-5"
+          >
+            <div class="rating justify-content-end">
+              <div class="rating-label checked">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label checked">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label checked">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label checked">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label checked">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+            </div>
+          </td>
+          <td class="text-end pe-0">
+            <span>$65.00</span>
+          </td>
+          <td class="text-end pe-0">
+            <span>20569</span>
+          </td>
+          <td class="text-end pe-0">2.05685%</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="d-flex align-items-center">
+              <!--begin::Thumbnail-->
+              <a
+                href="{% url 'products_edit' %}"
+                class="symbol symbol-50px"
+              >
+                <span
+                  class="symbol-label"
+                  style="
+                    background-image: url({% static 'assets/media//stock/ecommerce/50.gif' %});
+                  "
+                ></span>
+              </a>
+              <!--end::Thumbnail-->
+              <div class="ms-5">
+                <!--begin::Title-->
+                <a
+                  href="{% url 'products_edit' %}"
+                  class="text-gray-800 text-hover-primary fs-5 fw-bold"
+                  data-kt-ecommerce-product-filter="product_name"
+                  >Product 50</a
+                >
+                <!--end::Title-->
+              </div>
+            </div>
+          </td>
+          <td class="text-end pe-0">
+            <span class="fw-bold">03704001</span>
+          </td>
+          <td
+            class="text-end pe-0"
+            data-order="rating-2"
+            data-filter="rating-2"
+          >
+            <div class="rating justify-content-end">
+              <div class="rating-label checked">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label checked">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+            </div>
+          </td>
+          <td class="text-end pe-0">
+            <span>$295.00</span>
+          </td>
+          <td class="text-end pe-0">
+            <span>16455</span>
+          </td>
+          <td class="text-end pe-0">1.64548%</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="d-flex align-items-center">
+              <!--begin::Thumbnail-->
+              <a
+                href="{% url 'products_edit' %}"
+                class="symbol symbol-50px"
+              >
+                <span
+                  class="symbol-label"
+                  style="
+                    background-image: url({% static 'assets/media//stock/ecommerce/5.gif' %});
+                  "
+                ></span>
+              </a>
+              <!--end::Thumbnail-->
+              <div class="ms-5">
+                <!--begin::Title-->
+                <a
+                  href="{% url 'products_edit' %}"
+                  class="text-gray-800 text-hover-primary fs-5 fw-bold"
+                  data-kt-ecommerce-product-filter="product_name"
+                  >Product 5</a
+                >
+                <!--end::Title-->
+              </div>
+            </div>
+          </td>
+          <td class="text-end pe-0">
+            <span class="fw-bold">03684006</span>
+          </td>
+          <td
+            class="text-end pe-0"
+            data-order="rating-3"
+            data-filter="rating-3"
+          >
+            <div class="rating justify-content-end">
+              <div class="rating-label checked">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label checked">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label checked">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+            </div>
+          </td>
+          <td class="text-end pe-0">
+            <span>$164.00</span>
+          </td>
+          <td class="text-end pe-0">
+            <span>13164</span>
+          </td>
+          <td class="text-end pe-0">1.31638%</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="d-flex align-items-center">
+              <!--begin::Thumbnail-->
+              <a
+                href="{% url 'products_edit' %}"
+                class="symbol symbol-50px"
+              >
+                <span
+                  class="symbol-label"
+                  style="
+                    background-image: url({% static 'assets/media//stock/ecommerce/13.gif' %});
+                  "
+                ></span>
+              </a>
+              <!--end::Thumbnail-->
+              <div class="ms-5">
+                <!--begin::Title-->
+                <a
+                  href="{% url 'products_edit' %}"
+                  class="text-gray-800 text-hover-primary fs-5 fw-bold"
+                  data-kt-ecommerce-product-filter="product_name"
+                  >Product 13</a
+                >
+                <!--end::Title-->
+              </div>
+            </div>
+          </td>
+          <td class="text-end pe-0">
+            <span class="fw-bold">04391002</span>
+          </td>
+          <td
+            class="text-end pe-0"
+            data-order="rating-5"
+            data-filter="rating-5"
+          >
+            <div class="rating justify-content-end">
+              <div class="rating-label checked">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label checked">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label checked">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label checked">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label checked">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+            </div>
+          </td>
+          <td class="text-end pe-0">
+            <span>$176.00</span>
+          </td>
+          <td class="text-end pe-0">
+            <span>10531</span>
+          </td>
+          <td class="text-end pe-0">1.05311%</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="d-flex align-items-center">
+              <!--begin::Thumbnail-->
+              <a
+                href="{% url 'products_edit' %}"
+                class="symbol symbol-50px"
+              >
+                <span
+                  class="symbol-label"
+                  style="
+                    background-image: url({% static 'assets/media//stock/ecommerce/26.gif' %});
+                  "
+                ></span>
+              </a>
+              <!--end::Thumbnail-->
+              <div class="ms-5">
+                <!--begin::Title-->
+                <a
+                  href="{% url 'products_edit' %}"
+                  class="text-gray-800 text-hover-primary fs-5 fw-bold"
+                  data-kt-ecommerce-product-filter="product_name"
+                  >Product 26</a
+                >
+                <!--end::Title-->
+              </div>
+            </div>
+          </td>
+          <td class="text-end pe-0">
+            <span class="fw-bold">03840004</span>
+          </td>
+          <td
+            class="text-end pe-0"
+            data-order="rating-1"
+            data-filter="rating-1"
+          >
+            <div class="rating justify-content-end">
+              <div class="rating-label checked">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+            </div>
+          </td>
+          <td class="text-end pe-0">
+            <span>$28.00</span>
+          </td>
+          <td class="text-end pe-0">
+            <span>8425</span>
+          </td>
+          <td class="text-end pe-0">0.84248%</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="d-flex align-items-center">
+              <!--begin::Thumbnail-->
+              <a
+                href="{% url 'products_edit' %}"
+                class="symbol symbol-50px"
+              >
+                <span
+                  class="symbol-label"
+                  style="
+                    background-image: url({% static 'assets/media//stock/ecommerce/4.gif' %});
+                  "
+                ></span>
+              </a>
+              <!--end::Thumbnail-->
+              <div class="ms-5">
+                <!--begin::Title-->
+                <a
+                  href="{% url 'products_edit' %}"
+                  class="text-gray-800 text-hover-primary fs-5 fw-bold"
+                  data-kt-ecommerce-product-filter="product_name"
+                  >Product 4</a
+                >
+                <!--end::Title-->
+              </div>
+            </div>
+          </td>
+          <td class="text-end pe-0">
+            <span class="fw-bold">02491001</span>
+          </td>
+          <td
+            class="text-end pe-0"
+            data-order="rating-2"
+            data-filter="rating-2"
+          >
+            <div class="rating justify-content-end">
+              <div class="rating-label checked">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label checked">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+            </div>
+          </td>
+          <td class="text-end pe-0">
+            <span>$106.00</span>
+          </td>
+          <td class="text-end pe-0">
+            <span>6740</span>
+          </td>
+          <td class="text-end pe-0">0.67399%</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="d-flex align-items-center">
+              <!--begin::Thumbnail-->
+              <a
+                href="{% url 'products_edit' %}"
+                class="symbol symbol-50px"
+              >
+                <span
+                  class="symbol-label"
+                  style="
+                    background-image: url({% static 'assets/media//stock/ecommerce/32.gif' %});
+                  "
+                ></span>
+              </a>
+              <!--end::Thumbnail-->
+              <div class="ms-5">
+                <!--begin::Title-->
+                <a
+                  href="{% url 'products_edit' %}"
+                  class="text-gray-800 text-hover-primary fs-5 fw-bold"
+                  data-kt-ecommerce-product-filter="product_name"
+                  >Product 32</a
+                >
+                <!--end::Title-->
+              </div>
+            </div>
+          </td>
+          <td class="text-end pe-0">
+            <span class="fw-bold">01739007</span>
+          </td>
+          <td
+            class="text-end pe-0"
+            data-order="rating-5"
+            data-filter="rating-5"
+          >
+            <div class="rating justify-content-end">
+              <div class="rating-label checked">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label checked">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label checked">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label checked">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label checked">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+            </div>
+          </td>
+          <td class="text-end pe-0">
+            <span>$119.00</span>
+          </td>
+          <td class="text-end pe-0">
+            <span>5392</span>
+          </td>
+          <td class="text-end pe-0">0.53919%</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="d-flex align-items-center">
+              <!--begin::Thumbnail-->
+              <a
+                href="{% url 'products_edit' %}"
+                class="symbol symbol-50px"
+              >
+                <span
+                  class="symbol-label"
+                  style="
+                    background-image: url({% static 'assets/media//stock/ecommerce/23.gif' %});
+                  "
+                ></span>
+              </a>
+              <!--end::Thumbnail-->
+              <div class="ms-5">
+                <!--begin::Title-->
+                <a
+                  href="{% url 'products_edit' %}"
+                  class="text-gray-800 text-hover-primary fs-5 fw-bold"
+                  data-kt-ecommerce-product-filter="product_name"
+                  >Product 23</a
+                >
+                <!--end::Title-->
+              </div>
+            </div>
+          </td>
+          <td class="text-end pe-0">
+            <span class="fw-bold">03833002</span>
+          </td>
+          <td
+            class="text-end pe-0"
+            data-order="rating-3"
+            data-filter="rating-3"
+          >
+            <div class="rating justify-content-end">
+              <div class="rating-label checked">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label checked">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label checked">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+            </div>
+          </td>
+          <td class="text-end pe-0">
+            <span>$20.00</span>
+          </td>
+          <td class="text-end pe-0">
+            <span>4314</span>
+          </td>
+          <td class="text-end pe-0">0.43135%</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="d-flex align-items-center">
+              <!--begin::Thumbnail-->
+              <a
+                href="{% url 'products_edit' %}"
+                class="symbol symbol-50px"
+              >
+                <span
+                  class="symbol-label"
+                  style="
+                    background-image: url({% static 'assets/media//stock/ecommerce/21.gif' %});
+                  "
+                ></span>
+              </a>
+              <!--end::Thumbnail-->
+              <div class="ms-5">
+                <!--begin::Title-->
+                <a
+                  href="{% url 'products_edit' %}"
+                  class="text-gray-800 text-hover-primary fs-5 fw-bold"
+                  data-kt-ecommerce-product-filter="product_name"
+                  >Product 21</a
+                >
+                <!--end::Title-->
+              </div>
+            </div>
+          </td>
+          <td class="text-end pe-0">
+            <span class="fw-bold">02157008</span>
+          </td>
+          <td
+            class="text-end pe-0"
+            data-order="rating-5"
+            data-filter="rating-5"
+          >
+            <div class="rating justify-content-end">
+              <div class="rating-label checked">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label checked">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label checked">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label checked">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label checked">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+            </div>
+          </td>
+          <td class="text-end pe-0">
+            <span>$160.00</span>
+          </td>
+          <td class="text-end pe-0">
+            <span>3451</span>
+          </td>
+          <td class="text-end pe-0">0.34508%</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="d-flex align-items-center">
+              <!--begin::Thumbnail-->
+              <a
+                href="{% url 'products_edit' %}"
+                class="symbol symbol-50px"
+              >
+                <span
+                  class="symbol-label"
+                  style="
+                    background-image: url({% static 'assets/media//stock/ecommerce/41.gif' %});
+                  "
+                ></span>
+              </a>
+              <!--end::Thumbnail-->
+              <div class="ms-5">
+                <!--begin::Title-->
+                <a
+                  href="{% url 'products_edit' %}"
+                  class="text-gray-800 text-hover-primary fs-5 fw-bold"
+                  data-kt-ecommerce-product-filter="product_name"
+                  >Product 41</a
+                >
+                <!--end::Title-->
+              </div>
+            </div>
+          </td>
+          <td class="text-end pe-0">
+            <span class="fw-bold">01330008</span>
+          </td>
+          <td
+            class="text-end pe-0"
+            data-order="rating-3"
+            data-filter="rating-3"
+          >
+            <div class="rating justify-content-end">
+              <div class="rating-label checked">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label checked">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label checked">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+            </div>
+          </td>
+          <td class="text-end pe-0">
+            <span>$133.00</span>
+          </td>
+          <td class="text-end pe-0">
+            <span>2761</span>
+          </td>
+          <td class="text-end pe-0">0.27607%</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="d-flex align-items-center">
+              <!--begin::Thumbnail-->
+              <a
+                href="{% url 'products_edit' %}"
+                class="symbol symbol-50px"
+              >
+                <span
+                  class="symbol-label"
+                  style="
+                    background-image: url({% static 'assets/media//stock/ecommerce/27.gif' %});
+                  "
+                ></span>
+              </a>
+              <!--end::Thumbnail-->
+              <div class="ms-5">
+                <!--begin::Title-->
+                <a
+                  href="{% url 'products_edit' %}"
+                  class="text-gray-800 text-hover-primary fs-5 fw-bold"
+                  data-kt-ecommerce-product-filter="product_name"
+                  >Product 27</a
+                >
+                <!--end::Title-->
+              </div>
+            </div>
+          </td>
+          <td class="text-end pe-0">
+            <span class="fw-bold">03842006</span>
+          </td>
+          <td
+            class="text-end pe-0"
+            data-order="rating-4"
+            data-filter="rating-4"
+          >
+            <div class="rating justify-content-end">
+              <div class="rating-label checked">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label checked">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label checked">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label checked">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+            </div>
+          </td>
+          <td class="text-end pe-0">
+            <span>$25.00</span>
+          </td>
+          <td class="text-end pe-0">
+            <span>2209</span>
+          </td>
+          <td class="text-end pe-0">0.22085%</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="d-flex align-items-center">
+              <!--begin::Thumbnail-->
+              <a
+                href="{% url 'products_edit' %}"
+                class="symbol symbol-50px"
+              >
+                <span
+                  class="symbol-label"
+                  style="
+                    background-image: url({% static 'assets/media//stock/ecommerce/40.gif' %});
+                  "
+                ></span>
+              </a>
+              <!--end::Thumbnail-->
+              <div class="ms-5">
+                <!--begin::Title-->
+                <a
+                  href="{% url 'products_edit' %}"
+                  class="text-gray-800 text-hover-primary fs-5 fw-bold"
+                  data-kt-ecommerce-product-filter="product_name"
+                  >Product 40</a
+                >
+                <!--end::Title-->
+              </div>
+            </div>
+          </td>
+          <td class="text-end pe-0">
+            <span class="fw-bold">03190009</span>
+          </td>
+          <td
+            class="text-end pe-0"
+            data-order="rating-1"
+            data-filter="rating-1"
+          >
+            <div class="rating justify-content-end">
+              <div class="rating-label checked">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+            </div>
+          </td>
+          <td class="text-end pe-0">
+            <span>$294.00</span>
+          </td>
+          <td class="text-end pe-0">
+            <span>1767</span>
+          </td>
+          <td class="text-end pe-0">0.17668%</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="d-flex align-items-center">
+              <!--begin::Thumbnail-->
+              <a
+                href="{% url 'products_edit' %}"
+                class="symbol symbol-50px"
+              >
+                <span
+                  class="symbol-label"
+                  style="
+                    background-image: url({% static 'assets/media//stock/ecommerce/17.gif' %});
+                  "
+                ></span>
+              </a>
+              <!--end::Thumbnail-->
+              <div class="ms-5">
+                <!--begin::Title-->
+                <a
+                  href="{% url 'products_edit' %}"
+                  class="text-gray-800 text-hover-primary fs-5 fw-bold"
+                  data-kt-ecommerce-product-filter="product_name"
+                  >Product 17</a
+                >
+                <!--end::Title-->
+              </div>
+            </div>
+          </td>
+          <td class="text-end pe-0">
+            <span class="fw-bold">03164006</span>
+          </td>
+          <td
+            class="text-end pe-0"
+            data-order="rating-4"
+            data-filter="rating-4"
+          >
+            <div class="rating justify-content-end">
+              <div class="rating-label checked">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label checked">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label checked">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label checked">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+            </div>
+          </td>
+          <td class="text-end pe-0">
+            <span>$243.00</span>
+          </td>
+          <td class="text-end pe-0">
+            <span>1414</span>
+          </td>
+          <td class="text-end pe-0">0.14135%</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="d-flex align-items-center">
+              <!--begin::Thumbnail-->
+              <a
+                href="{% url 'products_edit' %}"
+                class="symbol symbol-50px"
+              >
+                <span
+                  class="symbol-label"
+                  style="
+                    background-image: url({% static 'assets/media//stock/ecommerce/33.gif' %});
+                  "
+                ></span>
+              </a>
+              <!--end::Thumbnail-->
+              <div class="ms-5">
+                <!--begin::Title-->
+                <a
+                  href="{% url 'products_edit' %}"
+                  class="text-gray-800 text-hover-primary fs-5 fw-bold"
+                  data-kt-ecommerce-product-filter="product_name"
+                  >Product 33</a
+                >
+                <!--end::Title-->
+              </div>
+            </div>
+          </td>
+          <td class="text-end pe-0">
+            <span class="fw-bold">04582003</span>
+          </td>
+          <td
+            class="text-end pe-0"
+            data-order="rating-4"
+            data-filter="rating-4"
+          >
+            <div class="rating justify-content-end">
+              <div class="rating-label checked">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label checked">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label checked">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label checked">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+            </div>
+          </td>
+          <td class="text-end pe-0">
+            <span>$139.00</span>
+          </td>
+          <td class="text-end pe-0">
+            <span>1131</span>
+          </td>
+          <td class="text-end pe-0">0.11308%</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="d-flex align-items-center">
+              <!--begin::Thumbnail-->
+              <a
+                href="{% url 'products_edit' %}"
+                class="symbol symbol-50px"
+              >
+                <span
+                  class="symbol-label"
+                  style="
+                    background-image: url({% static 'assets/media//stock/ecommerce/15.gif' %});
+                  "
+                ></span>
+              </a>
+              <!--end::Thumbnail-->
+              <div class="ms-5">
+                <!--begin::Title-->
+                <a
+                  href="{% url 'products_edit' %}"
+                  class="text-gray-800 text-hover-primary fs-5 fw-bold"
+                  data-kt-ecommerce-product-filter="product_name"
+                  >Product 15</a
+                >
+                <!--end::Title-->
+              </div>
+            </div>
+          </td>
+          <td class="text-end pe-0">
+            <span class="fw-bold">01912006</span>
+          </td>
+          <td
+            class="text-end pe-0"
+            data-order="rating-4"
+            data-filter="rating-4"
+          >
+            <div class="rating justify-content-end">
+              <div class="rating-label checked">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label checked">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label checked">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label checked">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+            </div>
+          </td>
+          <td class="text-end pe-0">
+            <span>$287.00</span>
+          </td>
+          <td class="text-end pe-0">
+            <span>905</span>
+          </td>
+          <td class="text-end pe-0">0.09046%</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="d-flex align-items-center">
+              <!--begin::Thumbnail-->
+              <a
+                href="{% url 'products_edit' %}"
+                class="symbol symbol-50px"
+              >
+                <span
+                  class="symbol-label"
+                  style="
+                    background-image: url({% static 'assets/media//stock/ecommerce/49.gif' %});
+                  "
+                ></span>
+              </a>
+              <!--end::Thumbnail-->
+              <div class="ms-5">
+                <!--begin::Title-->
+                <a
+                  href="{% url 'products_edit' %}"
+                  class="text-gray-800 text-hover-primary fs-5 fw-bold"
+                  data-kt-ecommerce-product-filter="product_name"
+                  >Product 49</a
+                >
+                <!--end::Title-->
+              </div>
+            </div>
+          </td>
+          <td class="text-end pe-0">
+            <span class="fw-bold">01261009</span>
+          </td>
+          <td
+            class="text-end pe-0"
+            data-order="rating-2"
+            data-filter="rating-2"
+          >
+            <div class="rating justify-content-end">
+              <div class="rating-label checked">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label checked">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+            </div>
+          </td>
+          <td class="text-end pe-0">
+            <span>$258.00</span>
+          </td>
+          <td class="text-end pe-0">
+            <span>724</span>
+          </td>
+          <td class="text-end pe-0">0.07237%</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="d-flex align-items-center">
+              <!--begin::Thumbnail-->
+              <a
+                href="{% url 'products_edit' %}"
+                class="symbol symbol-50px"
+              >
+                <span
+                  class="symbol-label"
+                  style="
+                    background-image: url({% static 'assets/media//stock/ecommerce/20.gif' %});
+                  "
+                ></span>
+              </a>
+              <!--end::Thumbnail-->
+              <div class="ms-5">
+                <!--begin::Title-->
+                <a
+                  href="{% url 'products_edit' %}"
+                  class="text-gray-800 text-hover-primary fs-5 fw-bold"
+                  data-kt-ecommerce-product-filter="product_name"
+                  >Product 20</a
+                >
+                <!--end::Title-->
+              </div>
+            </div>
+          </td>
+          <td class="text-end pe-0">
+            <span class="fw-bold">03770009</span>
+          </td>
+          <td
+            class="text-end pe-0"
+            data-order="rating-5"
+            data-filter="rating-5"
+          >
+            <div class="rating justify-content-end">
+              <div class="rating-label checked">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label checked">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label checked">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label checked">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label checked">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+            </div>
+          </td>
+          <td class="text-end pe-0">
+            <span>$299.00</span>
+          </td>
+          <td class="text-end pe-0">
+            <span>579</span>
+          </td>
+          <td class="text-end pe-0">0.0579%</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="d-flex align-items-center">
+              <!--begin::Thumbnail-->
+              <a
+                href="{% url 'products_edit' %}"
+                class="symbol symbol-50px"
+              >
+                <span
+                  class="symbol-label"
+                  style="
+                    background-image: url({% static 'assets/media//stock/ecommerce/48.gif' %});
+                  "
+                ></span>
+              </a>
+              <!--end::Thumbnail-->
+              <div class="ms-5">
+                <!--begin::Title-->
+                <a
+                  href="{% url 'products_edit' %}"
+                  class="text-gray-800 text-hover-primary fs-5 fw-bold"
+                  data-kt-ecommerce-product-filter="product_name"
+                  >Product 48</a
+                >
+                <!--end::Title-->
+              </div>
+            </div>
+          </td>
+          <td class="text-end pe-0">
+            <span class="fw-bold">03807004</span>
+          </td>
+          <td
+            class="text-end pe-0"
+            data-order="rating-1"
+            data-filter="rating-1"
+          >
+            <div class="rating justify-content-end">
+              <div class="rating-label checked">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+            </div>
+          </td>
+          <td class="text-end pe-0">
+            <span>$170.00</span>
+          </td>
+          <td class="text-end pe-0">
+            <span>463</span>
+          </td>
+          <td class="text-end pe-0">0.04632%</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="d-flex align-items-center">
+              <!--begin::Thumbnail-->
+              <a
+                href="{% url 'products_edit' %}"
+                class="symbol symbol-50px"
+              >
+                <span
+                  class="symbol-label"
+                  style="
+                    background-image: url({% static 'assets/media//stock/ecommerce/31.gif' %});
+                  "
+                ></span>
+              </a>
+              <!--end::Thumbnail-->
+              <div class="ms-5">
+                <!--begin::Title-->
+                <a
+                  href="{% url 'products_edit' %}"
+                  class="text-gray-800 text-hover-primary fs-5 fw-bold"
+                  data-kt-ecommerce-product-filter="product_name"
+                  >Product 31</a
+                >
+                <!--end::Title-->
+              </div>
+            </div>
+          </td>
+          <td class="text-end pe-0">
+            <span class="fw-bold">04271007</span>
+          </td>
+          <td
+            class="text-end pe-0"
+            data-order="rating-2"
+            data-filter="rating-2"
+          >
+            <div class="rating justify-content-end">
+              <div class="rating-label checked">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label checked">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+            </div>
+          </td>
+          <td class="text-end pe-0">
+            <span>$23.00</span>
+          </td>
+          <td class="text-end pe-0">
+            <span>371</span>
+          </td>
+          <td class="text-end pe-0">0.03705%</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="d-flex align-items-center">
+              <!--begin::Thumbnail-->
+              <a
+                href="{% url 'products_edit' %}"
+                class="symbol symbol-50px"
+              >
+                <span
+                  class="symbol-label"
+                  style="
+                    background-image: url({% static 'assets/media//stock/ecommerce/8.gif' %});
+                  "
+                ></span>
+              </a>
+              <!--end::Thumbnail-->
+              <div class="ms-5">
+                <!--begin::Title-->
+                <a
+                  href="{% url 'products_edit' %}"
+                  class="text-gray-800 text-hover-primary fs-5 fw-bold"
+                  data-kt-ecommerce-product-filter="product_name"
+                  >Product 8</a
+                >
+                <!--end::Title-->
+              </div>
+            </div>
+          </td>
+          <td class="text-end pe-0">
+            <span class="fw-bold">01971002</span>
+          </td>
+          <td
+            class="text-end pe-0"
+            data-order="rating-3"
+            data-filter="rating-3"
+          >
+            <div class="rating justify-content-end">
+              <div class="rating-label checked">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label checked">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label checked">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+            </div>
+          </td>
+          <td class="text-end pe-0">
+            <span>$193.00</span>
+          </td>
+          <td class="text-end pe-0">
+            <span>296</span>
+          </td>
+          <td class="text-end pe-0">0.02964%</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="d-flex align-items-center">
+              <!--begin::Thumbnail-->
+              <a
+                href="{% url 'products_edit' %}"
+                class="symbol symbol-50px"
+              >
+                <span
+                  class="symbol-label"
+                  style="
+                    background-image: url({% static 'assets/media//stock/ecommerce/16.gif' %});
+                  "
+                ></span>
+              </a>
+              <!--end::Thumbnail-->
+              <div class="ms-5">
+                <!--begin::Title-->
+                <a
+                  href="{% url 'products_edit' %}"
+                  class="text-gray-800 text-hover-primary fs-5 fw-bold"
+                  data-kt-ecommerce-product-filter="product_name"
+                  >Product 16</a
+                >
+                <!--end::Title-->
+              </div>
+            </div>
+          </td>
+          <td class="text-end pe-0">
+            <span class="fw-bold">02611003</span>
+          </td>
+          <td
+            class="text-end pe-0"
+            data-order="rating-3"
+            data-filter="rating-3"
+          >
+            <div class="rating justify-content-end">
+              <div class="rating-label checked">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label checked">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label checked">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+            </div>
+          </td>
+          <td class="text-end pe-0">
+            <span>$155.00</span>
+          </td>
+          <td class="text-end pe-0">
+            <span>237</span>
+          </td>
+          <td class="text-end pe-0">0.02371%</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="d-flex align-items-center">
+              <!--begin::Thumbnail-->
+              <a
+                href="{% url 'products_edit' %}"
+                class="symbol symbol-50px"
+              >
+                <span
+                  class="symbol-label"
+                  style="
+                    background-image: url({% static 'assets/media//stock/ecommerce/22.gif' %});
+                  "
+                ></span>
+              </a>
+              <!--end::Thumbnail-->
+              <div class="ms-5">
+                <!--begin::Title-->
+                <a
+                  href="{% url 'products_edit' %}"
+                  class="text-gray-800 text-hover-primary fs-5 fw-bold"
+                  data-kt-ecommerce-product-filter="product_name"
+                  >Product 22</a
+                >
+                <!--end::Title-->
+              </div>
+            </div>
+          </td>
+          <td class="text-end pe-0">
+            <span class="fw-bold">04452008</span>
+          </td>
+          <td
+            class="text-end pe-0"
+            data-order="rating-3"
+            data-filter="rating-3"
+          >
+            <div class="rating justify-content-end">
+              <div class="rating-label checked">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label checked">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label checked">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+            </div>
+          </td>
+          <td class="text-end pe-0">
+            <span>$248.00</span>
+          </td>
+          <td class="text-end pe-0">
+            <span>190</span>
+          </td>
+          <td class="text-end pe-0">0.01897%</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="d-flex align-items-center">
+              <!--begin::Thumbnail-->
+              <a
+                href="{% url 'products_edit' %}"
+                class="symbol symbol-50px"
+              >
+                <span
+                  class="symbol-label"
+                  style="
+                    background-image: url({% static 'assets/media//stock/ecommerce/18.gif' %});
+                  "
+                ></span>
+              </a>
+              <!--end::Thumbnail-->
+              <div class="ms-5">
+                <!--begin::Title-->
+                <a
+                  href="{% url 'products_edit' %}"
+                  class="text-gray-800 text-hover-primary fs-5 fw-bold"
+                  data-kt-ecommerce-product-filter="product_name"
+                  >Product 18</a
+                >
+                <!--end::Title-->
+              </div>
+            </div>
+          </td>
+          <td class="text-end pe-0">
+            <span class="fw-bold">01636009</span>
+          </td>
+          <td
+            class="text-end pe-0"
+            data-order="rating-1"
+            data-filter="rating-1"
+          >
+            <div class="rating justify-content-end">
+              <div class="rating-label checked">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+            </div>
+          </td>
+          <td class="text-end pe-0">
+            <span>$206.00</span>
+          </td>
+          <td class="text-end pe-0">
+            <span>152</span>
+          </td>
+          <td class="text-end pe-0">0.01518%</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="d-flex align-items-center">
+              <!--begin::Thumbnail-->
+              <a
+                href="{% url 'products_edit' %}"
+                class="symbol symbol-50px"
+              >
+                <span
+                  class="symbol-label"
+                  style="
+                    background-image: url({% static 'assets/media//stock/ecommerce/11.gif' %});
+                  "
+                ></span>
+              </a>
+              <!--end::Thumbnail-->
+              <div class="ms-5">
+                <!--begin::Title-->
+                <a
+                  href="{% url 'products_edit' %}"
+                  class="text-gray-800 text-hover-primary fs-5 fw-bold"
+                  data-kt-ecommerce-product-filter="product_name"
+                  >Product 11</a
+                >
+                <!--end::Title-->
+              </div>
+            </div>
+          </td>
+          <td class="text-end pe-0">
+            <span class="fw-bold">02944002</span>
+          </td>
+          <td
+            class="text-end pe-0"
+            data-order="rating-5"
+            data-filter="rating-5"
+          >
+            <div class="rating justify-content-end">
+              <div class="rating-label checked">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label checked">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label checked">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label checked">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label checked">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+            </div>
+          </td>
+          <td class="text-end pe-0">
+            <span>$241.00</span>
+          </td>
+          <td class="text-end pe-0">
+            <span>121</span>
+          </td>
+          <td class="text-end pe-0">0.01214%</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="d-flex align-items-center">
+              <!--begin::Thumbnail-->
+              <a
+                href="{% url 'products_edit' %}"
+                class="symbol symbol-50px"
+              >
+                <span
+                  class="symbol-label"
+                  style="
+                    background-image: url({% static 'assets/media//stock/ecommerce/47.gif' %});
+                  "
+                ></span>
+              </a>
+              <!--end::Thumbnail-->
+              <div class="ms-5">
+                <!--begin::Title-->
+                <a
+                  href="{% url 'products_edit' %}"
+                  class="text-gray-800 text-hover-primary fs-5 fw-bold"
+                  data-kt-ecommerce-product-filter="product_name"
+                  >Product 47</a
+                >
+                <!--end::Title-->
+              </div>
+            </div>
+          </td>
+          <td class="text-end pe-0">
+            <span class="fw-bold">01192006</span>
+          </td>
+          <td
+            class="text-end pe-0"
+            data-order="rating-3"
+            data-filter="rating-3"
+          >
+            <div class="rating justify-content-end">
+              <div class="rating-label checked">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label checked">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label checked">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+            </div>
+          </td>
+          <td class="text-end pe-0">
+            <span>$81.00</span>
+          </td>
+          <td class="text-end pe-0">
+            <span>97</span>
+          </td>
+          <td class="text-end pe-0">0.00971%</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="d-flex align-items-center">
+              <!--begin::Thumbnail-->
+              <a
+                href="{% url 'products_edit' %}"
+                class="symbol symbol-50px"
+              >
+                <span
+                  class="symbol-label"
+                  style="
+                    background-image: url({% static 'assets/media//stock/ecommerce/42.gif' %});
+                  "
+                ></span>
+              </a>
+              <!--end::Thumbnail-->
+              <div class="ms-5">
+                <!--begin::Title-->
+                <a
+                  href="{% url 'products_edit' %}"
+                  class="text-gray-800 text-hover-primary fs-5 fw-bold"
+                  data-kt-ecommerce-product-filter="product_name"
+                  >Product 42</a
+                >
+                <!--end::Title-->
+              </div>
+            </div>
+          </td>
+          <td class="text-end pe-0">
+            <span class="fw-bold">01650003</span>
+          </td>
+          <td
+            class="text-end pe-0"
+            data-order="rating-1"
+            data-filter="rating-1"
+          >
+            <div class="rating justify-content-end">
+              <div class="rating-label checked">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+            </div>
+          </td>
+          <td class="text-end pe-0">
+            <span>$93.00</span>
+          </td>
+          <td class="text-end pe-0">
+            <span>78</span>
+          </td>
+          <td class="text-end pe-0">0.00777%</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="d-flex align-items-center">
+              <!--begin::Thumbnail-->
+              <a
+                href="{% url 'products_edit' %}"
+                class="symbol symbol-50px"
+              >
+                <span
+                  class="symbol-label"
+                  style="
+                    background-image: url({% static 'assets/media//stock/ecommerce/29.gif' %});
+                  "
+                ></span>
+              </a>
+              <!--end::Thumbnail-->
+              <div class="ms-5">
+                <!--begin::Title-->
+                <a
+                  href="{% url 'products_edit' %}"
+                  class="text-gray-800 text-hover-primary fs-5 fw-bold"
+                  data-kt-ecommerce-product-filter="product_name"
+                  >Product 29</a
+                >
+                <!--end::Title-->
+              </div>
+            </div>
+          </td>
+          <td class="text-end pe-0">
+            <span class="fw-bold">02380004</span>
+          </td>
+          <td
+            class="text-end pe-0"
+            data-order="rating-2"
+            data-filter="rating-2"
+          >
+            <div class="rating justify-content-end">
+              <div class="rating-label checked">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label checked">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+            </div>
+          </td>
+          <td class="text-end pe-0">
+            <span>$47.00</span>
+          </td>
+          <td class="text-end pe-0">
+            <span>62</span>
+          </td>
+          <td class="text-end pe-0">0.00622%</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="d-flex align-items-center">
+              <!--begin::Thumbnail-->
+              <a
+                href="{% url 'products_edit' %}"
+                class="symbol symbol-50px"
+              >
+                <span
+                  class="symbol-label"
+                  style="
+                    background-image: url({% static 'assets/media//stock/ecommerce/34.gif' %});
+                  "
+                ></span>
+              </a>
+              <!--end::Thumbnail-->
+              <div class="ms-5">
+                <!--begin::Title-->
+                <a
+                  href="{% url 'products_edit' %}"
+                  class="text-gray-800 text-hover-primary fs-5 fw-bold"
+                  data-kt-ecommerce-product-filter="product_name"
+                  >Product 34</a
+                >
+                <!--end::Title-->
+              </div>
+            </div>
+          </td>
+          <td class="text-end pe-0">
+            <span class="fw-bold">03206001</span>
+          </td>
+          <td
+            class="text-end pe-0"
+            data-order="rating-3"
+            data-filter="rating-3"
+          >
+            <div class="rating justify-content-end">
+              <div class="rating-label checked">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label checked">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label checked">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+            </div>
+          </td>
+          <td class="text-end pe-0">
+            <span>$297.00</span>
+          </td>
+          <td class="text-end pe-0">
+            <span>50</span>
+          </td>
+          <td class="text-end pe-0">0.00497%</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="d-flex align-items-center">
+              <!--begin::Thumbnail-->
+              <a
+                href="{% url 'products_edit' %}"
+                class="symbol symbol-50px"
+              >
+                <span
+                  class="symbol-label"
+                  style="
+                    background-image: url({% static 'assets/media//stock/ecommerce/3.gif' %});
+                  "
+                ></span>
+              </a>
+              <!--end::Thumbnail-->
+              <div class="ms-5">
+                <!--begin::Title-->
+                <a
+                  href="{% url 'products_edit' %}"
+                  class="text-gray-800 text-hover-primary fs-5 fw-bold"
+                  data-kt-ecommerce-product-filter="product_name"
+                  >Product 3</a
+                >
+                <!--end::Title-->
+              </div>
+            </div>
+          </td>
+          <td class="text-end pe-0">
+            <span class="fw-bold">01550006</span>
+          </td>
+          <td
+            class="text-end pe-0"
+            data-order="rating-1"
+            data-filter="rating-1"
+          >
+            <div class="rating justify-content-end">
+              <div class="rating-label checked">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+            </div>
+          </td>
+          <td class="text-end pe-0">
+            <span>$150.00</span>
+          </td>
+          <td class="text-end pe-0">
+            <span>40</span>
+          </td>
+          <td class="text-end pe-0">0.00398%</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="d-flex align-items-center">
+              <!--begin::Thumbnail-->
+              <a
+                href="{% url 'products_edit' %}"
+                class="symbol symbol-50px"
+              >
+                <span
+                  class="symbol-label"
+                  style="
+                    background-image: url({% static 'assets/media//stock/ecommerce/12.gif' %});
+                  "
+                ></span>
+              </a>
+              <!--end::Thumbnail-->
+              <div class="ms-5">
+                <!--begin::Title-->
+                <a
+                  href="{% url 'products_edit' %}"
+                  class="text-gray-800 text-hover-primary fs-5 fw-bold"
+                  data-kt-ecommerce-product-filter="product_name"
+                  >Product 12</a
+                >
+                <!--end::Title-->
+              </div>
+            </div>
+          </td>
+          <td class="text-end pe-0">
+            <span class="fw-bold">02653006</span>
+          </td>
+          <td
+            class="text-end pe-0"
+            data-order="rating-1"
+            data-filter="rating-1"
+          >
+            <div class="rating justify-content-end">
+              <div class="rating-label checked">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+            </div>
+          </td>
+          <td class="text-end pe-0">
+            <span>$102.00</span>
+          </td>
+          <td class="text-end pe-0">
+            <span>32</span>
+          </td>
+          <td class="text-end pe-0">0.00318%</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="d-flex align-items-center">
+              <!--begin::Thumbnail-->
+              <a
+                href="{% url 'products_edit' %}"
+                class="symbol symbol-50px"
+              >
+                <span
+                  class="symbol-label"
+                  style="
+                    background-image: url({% static 'assets/media//stock/ecommerce/37.gif' %});
+                  "
+                ></span>
+              </a>
+              <!--end::Thumbnail-->
+              <div class="ms-5">
+                <!--begin::Title-->
+                <a
+                  href="{% url 'products_edit' %}"
+                  class="text-gray-800 text-hover-primary fs-5 fw-bold"
+                  data-kt-ecommerce-product-filter="product_name"
+                  >Product 37</a
+                >
+                <!--end::Title-->
+              </div>
+            </div>
+          </td>
+          <td class="text-end pe-0">
+            <span class="fw-bold">01857005</span>
+          </td>
+          <td
+            class="text-end pe-0"
+            data-order="rating-4"
+            data-filter="rating-4"
+          >
+            <div class="rating justify-content-end">
+              <div class="rating-label checked">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label checked">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label checked">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label checked">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+            </div>
+          </td>
+          <td class="text-end pe-0">
+            <span>$78.00</span>
+          </td>
+          <td class="text-end pe-0">
+            <span>26</span>
+          </td>
+          <td class="text-end pe-0">0.00255%</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="d-flex align-items-center">
+              <!--begin::Thumbnail-->
+              <a
+                href="{% url 'products_edit' %}"
+                class="symbol symbol-50px"
+              >
+                <span
+                  class="symbol-label"
+                  style="
+                    background-image: url({% static 'assets/media//stock/ecommerce/1.gif' %});
+                  "
+                ></span>
+              </a>
+              <!--end::Thumbnail-->
+              <div class="ms-5">
+                <!--begin::Title-->
+                <a
+                  href="{% url 'products_edit' %}"
+                  class="text-gray-800 text-hover-primary fs-5 fw-bold"
+                  data-kt-ecommerce-product-filter="product_name"
+                  >Product 1</a
+                >
+                <!--end::Title-->
+              </div>
+            </div>
+          </td>
+          <td class="text-end pe-0">
+            <span class="fw-bold">01650007</span>
+          </td>
+          <td
+            class="text-end pe-0"
+            data-order="rating-1"
+            data-filter="rating-1"
+          >
+            <div class="rating justify-content-end">
+              <div class="rating-label checked">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+            </div>
+          </td>
+          <td class="text-end pe-0">
+            <span>$155.00</span>
+          </td>
+          <td class="text-end pe-0">
+            <span>20</span>
+          </td>
+          <td class="text-end pe-0">0.00204%</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="d-flex align-items-center">
+              <!--begin::Thumbnail-->
+              <a
+                href="{% url 'products_edit' %}"
+                class="symbol symbol-50px"
+              >
+                <span
+                  class="symbol-label"
+                  style="
+                    background-image: url({% static 'assets/media//stock/ecommerce/35.gif' %});
+                  "
+                ></span>
+              </a>
+              <!--end::Thumbnail-->
+              <div class="ms-5">
+                <!--begin::Title-->
+                <a
+                  href="{% url 'products_edit' %}"
+                  class="text-gray-800 text-hover-primary fs-5 fw-bold"
+                  data-kt-ecommerce-product-filter="product_name"
+                  >Product 35</a
+                >
+                <!--end::Title-->
+              </div>
+            </div>
+          </td>
+          <td class="text-end pe-0">
+            <span class="fw-bold">01190006</span>
+          </td>
+          <td
+            class="text-end pe-0"
+            data-order="rating-1"
+            data-filter="rating-1"
+          >
+            <div class="rating justify-content-end">
+              <div class="rating-label checked">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+            </div>
+          </td>
+          <td class="text-end pe-0">
+            <span>$47.00</span>
+          </td>
+          <td class="text-end pe-0">
+            <span>16</span>
+          </td>
+          <td class="text-end pe-0">0.00163%</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="d-flex align-items-center">
+              <!--begin::Thumbnail-->
+              <a
+                href="{% url 'products_edit' %}"
+                class="symbol symbol-50px"
+              >
+                <span
+                  class="symbol-label"
+                  style="
+                    background-image: url({% static 'assets/media//stock/ecommerce/19.gif' %});
+                  "
+                ></span>
+              </a>
+              <!--end::Thumbnail-->
+              <div class="ms-5">
+                <!--begin::Title-->
+                <a
+                  href="{% url 'products_edit' %}"
+                  class="text-gray-800 text-hover-primary fs-5 fw-bold"
+                  data-kt-ecommerce-product-filter="product_name"
+                  >Product 19</a
+                >
+                <!--end::Title-->
+              </div>
+            </div>
+          </td>
+          <td class="text-end pe-0">
+            <span class="fw-bold">03587006</span>
+          </td>
+          <td
+            class="text-end pe-0"
+            data-order="rating-4"
+            data-filter="rating-4"
+          >
+            <div class="rating justify-content-end">
+              <div class="rating-label checked">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label checked">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label checked">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label checked">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+            </div>
+          </td>
+          <td class="text-end pe-0">
+            <span>$166.00</span>
+          </td>
+          <td class="text-end pe-0">
+            <span>13</span>
+          </td>
+          <td class="text-end pe-0">0.0013%</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="d-flex align-items-center">
+              <!--begin::Thumbnail-->
+              <a
+                href="{% url 'products_edit' %}"
+                class="symbol symbol-50px"
+              >
+                <span
+                  class="symbol-label"
+                  style="
+                    background-image: url({% static 'assets/media//stock/ecommerce/7.gif' %});
+                  "
+                ></span>
+              </a>
+              <!--end::Thumbnail-->
+              <div class="ms-5">
+                <!--begin::Title-->
+                <a
+                  href="{% url 'products_edit' %}"
+                  class="text-gray-800 text-hover-primary fs-5 fw-bold"
+                  data-kt-ecommerce-product-filter="product_name"
+                  >Product 7</a
+                >
+                <!--end::Title-->
+              </div>
+            </div>
+          </td>
+          <td class="text-end pe-0">
+            <span class="fw-bold">03526003</span>
+          </td>
+          <td
+            class="text-end pe-0"
+            data-order="rating-5"
+            data-filter="rating-5"
+          >
+            <div class="rating justify-content-end">
+              <div class="rating-label checked">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label checked">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label checked">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label checked">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label checked">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+            </div>
+          </td>
+          <td class="text-end pe-0">
+            <span>$143.00</span>
+          </td>
+          <td class="text-end pe-0">
+            <span>10</span>
+          </td>
+          <td class="text-end pe-0">0.00104%</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="d-flex align-items-center">
+              <!--begin::Thumbnail-->
+              <a
+                href="{% url 'products_edit' %}"
+                class="symbol symbol-50px"
+              >
+                <span
+                  class="symbol-label"
+                  style="
+                    background-image: url({% static 'assets/media//stock/ecommerce/9.gif' %});
+                  "
+                ></span>
+              </a>
+              <!--end::Thumbnail-->
+              <div class="ms-5">
+                <!--begin::Title-->
+                <a
+                  href="{% url 'products_edit' %}"
+                  class="text-gray-800 text-hover-primary fs-5 fw-bold"
+                  data-kt-ecommerce-product-filter="product_name"
+                  >Product 9</a
+                >
+                <!--end::Title-->
+              </div>
+            </div>
+          </td>
+          <td class="text-end pe-0">
+            <span class="fw-bold">04655006</span>
+          </td>
+          <td
+            class="text-end pe-0"
+            data-order="rating-4"
+            data-filter="rating-4"
+          >
+            <div class="rating justify-content-end">
+              <div class="rating-label checked">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label checked">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label checked">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label checked">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+            </div>
+          </td>
+          <td class="text-end pe-0">
+            <span>$226.00</span>
+          </td>
+          <td class="text-end pe-0">
+            <span>8</span>
+          </td>
+          <td class="text-end pe-0">0.00083%</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="d-flex align-items-center">
+              <!--begin::Thumbnail-->
+              <a
+                href="{% url 'products_edit' %}"
+                class="symbol symbol-50px"
+              >
+                <span
+                  class="symbol-label"
+                  style="
+                    background-image: url({% static 'assets/media//stock/ecommerce/36.gif' %});
+                  "
+                ></span>
+              </a>
+              <!--end::Thumbnail-->
+              <div class="ms-5">
+                <!--begin::Title-->
+                <a
+                  href="{% url 'products_edit' %}"
+                  class="text-gray-800 text-hover-primary fs-5 fw-bold"
+                  data-kt-ecommerce-product-filter="product_name"
+                  >Product 36</a
+                >
+                <!--end::Title-->
+              </div>
+            </div>
+          </td>
+          <td class="text-end pe-0">
+            <span class="fw-bold">03851009</span>
+          </td>
+          <td
+            class="text-end pe-0"
+            data-order="rating-5"
+            data-filter="rating-5"
+          >
+            <div class="rating justify-content-end">
+              <div class="rating-label checked">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label checked">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label checked">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label checked">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label checked">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+            </div>
+          </td>
+          <td class="text-end pe-0">
+            <span>$73.00</span>
+          </td>
+          <td class="text-end pe-0">
+            <span>7</span>
+          </td>
+          <td class="text-end pe-0">0.00067%</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="d-flex align-items-center">
+              <!--begin::Thumbnail-->
+              <a
+                href="{% url 'products_edit' %}"
+                class="symbol symbol-50px"
+              >
+                <span
+                  class="symbol-label"
+                  style="
+                    background-image: url({% static 'assets/media//stock/ecommerce/45.gif' %});
+                  "
+                ></span>
+              </a>
+              <!--end::Thumbnail-->
+              <div class="ms-5">
+                <!--begin::Title-->
+                <a
+                  href="{% url 'products_edit' %}"
+                  class="text-gray-800 text-hover-primary fs-5 fw-bold"
+                  data-kt-ecommerce-product-filter="product_name"
+                  >Product 45</a
+                >
+                <!--end::Title-->
+              </div>
+            </div>
+          </td>
+          <td class="text-end pe-0">
+            <span class="fw-bold">01226008</span>
+          </td>
+          <td
+            class="text-end pe-0"
+            data-order="rating-1"
+            data-filter="rating-1"
+          >
+            <div class="rating justify-content-end">
+              <div class="rating-label checked">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+            </div>
+          </td>
+          <td class="text-end pe-0">
+            <span>$238.00</span>
+          </td>
+          <td class="text-end pe-0">
+            <span>5</span>
+          </td>
+          <td class="text-end pe-0">0.00053%</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="d-flex align-items-center">
+              <!--begin::Thumbnail-->
+              <a
+                href="{% url 'products_edit' %}"
+                class="symbol symbol-50px"
+              >
+                <span
+                  class="symbol-label"
+                  style="
+                    background-image: url({% static 'assets/media//stock/ecommerce/2.gif' %});
+                  "
+                ></span>
+              </a>
+              <!--end::Thumbnail-->
+              <div class="ms-5">
+                <!--begin::Title-->
+                <a
+                  href="{% url 'products_edit' %}"
+                  class="text-gray-800 text-hover-primary fs-5 fw-bold"
+                  data-kt-ecommerce-product-filter="product_name"
+                  >Product 2</a
+                >
+                <!--end::Title-->
+              </div>
+            </div>
+          </td>
+          <td class="text-end pe-0">
+            <span class="fw-bold">01717007</span>
+          </td>
+          <td
+            class="text-end pe-0"
+            data-order="rating-3"
+            data-filter="rating-3"
+          >
+            <div class="rating justify-content-end">
+              <div class="rating-label checked">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label checked">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label checked">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+            </div>
+          </td>
+          <td class="text-end pe-0">
+            <span>$263.00</span>
+          </td>
+          <td class="text-end pe-0">
+            <span>4</span>
+          </td>
+          <td class="text-end pe-0">0.00043%</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="d-flex align-items-center">
+              <!--begin::Thumbnail-->
+              <a
+                href="{% url 'products_edit' %}"
+                class="symbol symbol-50px"
+              >
+                <span
+                  class="symbol-label"
+                  style="
+                    background-image: url({% static 'assets/media//stock/ecommerce/14.gif' %});
+                  "
+                ></span>
+              </a>
+              <!--end::Thumbnail-->
+              <div class="ms-5">
+                <!--begin::Title-->
+                <a
+                  href="{% url 'products_edit' %}"
+                  class="text-gray-800 text-hover-primary fs-5 fw-bold"
+                  data-kt-ecommerce-product-filter="product_name"
+                  >Product 14</a
+                >
+                <!--end::Title-->
+              </div>
+            </div>
+          </td>
+          <td class="text-end pe-0">
+            <span class="fw-bold">04363004</span>
+          </td>
+          <td
+            class="text-end pe-0"
+            data-order="rating-2"
+            data-filter="rating-2"
+          >
+            <div class="rating justify-content-end">
+              <div class="rating-label checked">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label checked">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+            </div>
+          </td>
+          <td class="text-end pe-0">
+            <span>$168.00</span>
+          </td>
+          <td class="text-end pe-0">
+            <span>3</span>
+          </td>
+          <td class="text-end pe-0">0.00034%</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="d-flex align-items-center">
+              <!--begin::Thumbnail-->
+              <a
+                href="{% url 'products_edit' %}"
+                class="symbol symbol-50px"
+              >
+                <span
+                  class="symbol-label"
+                  style="
+                    background-image: url({% static 'assets/media//stock/ecommerce/6.gif' %});
+                  "
+                ></span>
+              </a>
+              <!--end::Thumbnail-->
+              <div class="ms-5">
+                <!--begin::Title-->
+                <a
+                  href="{% url 'products_edit' %}"
+                  class="text-gray-800 text-hover-primary fs-5 fw-bold"
+                  data-kt-ecommerce-product-filter="product_name"
+                  >Product 6</a
+                >
+                <!--end::Title-->
+              </div>
+            </div>
+          </td>
+          <td class="text-end pe-0">
+            <span class="fw-bold">04354002</span>
+          </td>
+          <td
+            class="text-end pe-0"
+            data-order="rating-3"
+            data-filter="rating-3"
+          >
+            <div class="rating justify-content-end">
+              <div class="rating-label checked">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label checked">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label checked">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+            </div>
+          </td>
+          <td class="text-end pe-0">
+            <span>$260.00</span>
+          </td>
+          <td class="text-end pe-0">
+            <span>3</span>
+          </td>
+          <td class="text-end pe-0">0.00027%</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="d-flex align-items-center">
+              <!--begin::Thumbnail-->
+              <a
+                href="{% url 'products_edit' %}"
+                class="symbol symbol-50px"
+              >
+                <span
+                  class="symbol-label"
+                  style="
+                    background-image: url({% static 'assets/media//stock/ecommerce/24.gif' %});
+                  "
+                ></span>
+              </a>
+              <!--end::Thumbnail-->
+              <div class="ms-5">
+                <!--begin::Title-->
+                <a
+                  href="{% url 'products_edit' %}"
+                  class="text-gray-800 text-hover-primary fs-5 fw-bold"
+                  data-kt-ecommerce-product-filter="product_name"
+                  >Product 24</a
+                >
+                <!--end::Title-->
+              </div>
+            </div>
+          </td>
+          <td class="text-end pe-0">
+            <span class="fw-bold">02113005</span>
+          </td>
+          <td
+            class="text-end pe-0"
+            data-order="rating-5"
+            data-filter="rating-5"
+          >
+            <div class="rating justify-content-end">
+              <div class="rating-label checked">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label checked">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label checked">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label checked">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+              <div class="rating-label checked">
+                <i class="ki-duotone ki-star fs-6"></i>
+              </div>
+            </div>
+          </td>
+          <td class="text-end pe-0">
+            <span>$86.00</span>
+          </td>
+          <td class="text-end pe-0">
+            <span>2</span>
+          </td>
+          <td class="text-end pe-0">0.00022%</td>
+        </tr>
+      </tbody>
+    </table>
+    <!--end::Table-->
+  </div>
+  <!--end::Card body-->
+</div>
+<!--end::Products-->

@@ -1,0 +1,36 @@
+{% extends "base.html" %} 
+{% load slippers %} 
+{% block content %}
+{% comment %} aside goes here  {% endcomment %}
+{% #aside_pro data="db_data"%}
+{% /aside_pro %}
+<div class="wrapper d-flex  flex-column flex-row-fluid" id="kt_wrapper">
+    {% #header heading="Home" %}
+    {% /header %}
+    <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
+    <!--begin::Container-->
+    <div class="container-xxl" id="kt_content_container">   
+        {% #crm_dash %}
+        {% /crm_dash %}
+
+        {% #users_search data_list="" %}
+        {% /users_search %}
+
+        <!--end::Container-->
+    </div>
+    </div>
+</div>
+{% endblock content %}
+
+{% block modal %}
+{% #create_app_modal data="db_data"%}
+{% /create_app_modal%}
+{% #invite_modal data="db_data"%}
+{% /invite_modal%}
+{% #plans_modal data="db_data"%}
+{% /plans_modal%}
+{% #user_search_modal data="db_data"%}
+{% /user_search_modal%}
+{% #users_modal data="db_data"%}
+{% /users_modal %}
+{% endblock modal %} 

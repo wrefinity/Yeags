@@ -1,0 +1,155 @@
+{% load static %}
+
+<div class="flex-column flex-lg-row-auto w-100 w-lg-250px w-xxl-325px mb-8 mb-lg-0 me-lg-9 me-5">
+    <!--begin::Form-->
+    <form action="#">
+        <!--begin::Card-->
+        <div class="card">
+            <!--begin::Body-->
+            <div class="card-body">                  
+                <!--begin:Search-->
+                <div class="position-relative">
+                    <i class="ki-duotone ki-magnifier fs-3 text-gray-500 position-absolute top-50 translate-middle ms-6"><span class="path1"></span><span class="path2"></span></i>                        <input type="text" class="form-control form-control-solid ps-10" name="search" value="" placeholder="Search">
+                </div>
+                <!--end:Search-->
+
+                <!--begin::Border-->
+                <div class="separator separator-dashed my-8"></div>
+                <!--end::Border-->
+
+                <!--begin::Input group-->          
+                <div class="mb-5">               
+                    <label class="fs-6 form-label fw-bold text-dark">Team Type</label>
+                    
+                    <!--begin::Select-->
+                    <select class="form-select form-select-solid select2-hidden-accessible" data-control="select2" data-placeholder="In Progress" data-hide-search="true" data-select2-id="select2-data-10-vmnl" tabindex="-1" aria-hidden="true" data-kt-initialized="1">                    
+                        <option value=""></option>
+                        <option value="1">Not Started</option>
+                        <option value="2" selected="" data-select2-id="select2-data-12-pscd">In Progress</option>
+                        <option value="3">Done</option>
+                    </select><span class="select2 select2-container select2-container--bootstrap5" dir="ltr" data-select2-id="select2-data-11-xrgb" style="width: 100%;"><span class="selection"><span class="select2-selection select2-selection--single form-select form-select-solid" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-disabled="false" aria-labelledby="select2-j6if-container" aria-controls="select2-j6if-container"><span class="select2-selection__rendered" id="select2-j6if-container" role="textbox" aria-readonly="true" title="In Progress">In Progress</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>      
+                    <!--end::Select-->                             
+                </div>
+                <!--end::Input group--> 
+
+                <!--begin::Input group--> 
+                <div class="mb-5">               
+                    <label class="fs-6 form-label fw-bold text-dark">Team Name</label>
+                    <input type="text" class="form-control form-control form-control-solid" name="city">        
+                </div>  
+                <!--end::Input group-->   
+
+                 <!--begin::Input group--> 
+                 <div class="mb-5">               
+                    <label class="fs-6 form-label fw-bold text-dark">Team Size</label>
+                    
+                    <!--begin::Radio group-->
+                    <div class="nav-group nav-group-fluid">       
+                        <!--begin::Option-->     
+                        <label>     
+                            <input type="radio" class="btn-check" name="type" value="has" checked="checked">
+                            <span class="btn btn-sm btn-color-muted btn-active btn-active-primary fw-bold px-4">
+                                1-5
+                            </span>
+                        </label>
+                        <!--end::Option-->
+
+                        <!--begin::Option-->          
+                        <label>  
+                            <input type="radio" class="btn-check" name="type" value="users">
+                            <span class="btn btn-sm btn-color-muted btn-active btn-active-primary fw-bold px-4">
+                                5-10
+                            </span>
+                        </label>
+                        <!--end::Option-->
+
+                        <!--begin::Option-->        
+                        <label>    
+                            <input type="radio" class="btn-check" name="type" value="orders">
+                            <span class="btn btn-sm btn-color-muted btn-active btn-active-primary fw-bold px-4">
+                                10++
+                            </span>
+                        </label>
+                        <!--end::Option-->
+                    </div>
+                    <!--end::Radio group-->
+                </div>  
+                <!--end::Input group-->   
+                
+                <!--begin::Input group--> 
+                <div class="mb-5">               
+                    <label class="fs-6 form-label fw-bold text-dark">Max. Amount</label>
+
+                    <!--begin::Dialer-->
+                    <div class="position-relative" data-kt-dialer="true" data-kt-dialer-min="1000" data-kt-dialer-max="50000" data-kt-dialer-step="1000" data-kt-dialer-prefix="$" data-kt-dialer-decimals="2">
+
+                        <!--begin::Decrease control-->
+                        <button type="button" class="btn btn-icon btn-active-color-gray-700 position-absolute translate-middle-y top-50 start-0" data-kt-dialer-control="decrease">
+                            <i class="ki-duotone ki-minus-circle fs-1"><span class="path1"></span><span class="path2"></span></i>                            </button>
+                        <!--end::Decrease control-->
+
+                        <!--begin::Input control-->
+                        <input type="text" class="form-control form-control-solid border-0 ps-12" data-kt-dialer-control="input" placeholder="Amount" name="manageBudget" readonly="" value="$50">
+                        <!--end::Input control-->
+
+                        <!--begin::Increase control-->
+                        <button type="button" class="btn btn-icon btn-active-color-gray-700 position-absolute translate-middle-y top-50 end-0" data-kt-dialer-control="increase">
+                            <i class="ki-duotone ki-plus-circle fs-1"><span class="path1"></span><span class="path2"></span></i>                            </button>
+                        <!--end::Increase control-->
+                    </div>
+                    <!--end::Dialer-->                                      
+                </div> 
+                <!--end::Input group-->    
+            
+                <!--begin::Input group-->
+                <div class="mb-10">
+                    <label class="fs-6 form-label fw-bold text-dark mb-5">Categories</label>
+
+                    <!--begin::Checkbox-->
+                    <div class="form-check form-check-custom form-check-solid mb-5">
+                        <input class="form-check-input" type="checkbox" id="kt_search_category_1">
+                        <label class="form-check-label flex-grow-1 fw-semibold text-gray-700 fs-6" for="kt_search_category_1">
+                            Electronics
+                        </label>
+
+                        <span class="text-gray-400 fw-bold">28</span>
+                    </div>
+                    <!--end::Checkbox-->
+
+                    <!--begin::Checkbox-->
+                    <div class="form-check form-check-custom form-check-solid mb-5">
+                        <input class="form-check-input" type="checkbox" id="kt_search_category_2" checked="checked">
+                        <label class="form-check-label flex-grow-1 fw-semibold text-gray-700 fs-6" for="kt_search_category_2">
+                            Sport Equipments
+                        </label>
+
+                        <span class="text-gray-400 fw-bold">307</span>
+                    </div>                    
+                    <!--end::Checkbox-->
+
+                    <!--begin::Checkbox-->
+                    <div class="form-check form-check-custom form-check-solid">
+                        <input class="form-check-input" type="checkbox" id="kt_search_category_3">
+                        <label class="form-check-label flex-grow-1 fw-semibold text-gray-700 fs-6" for="kt_search_category_3">
+                            Furnuture
+                        </label>
+
+                        <span class="text-gray-400 fw-bold">54</span>
+                    </div>                    
+                    <!--end::Checkbox-->
+                </div>
+                <!--end::Input group-->
+
+                <!--begin::Action-->
+                <div class="d-flex align-items-center justify-content-end">
+                    <a href="#" class="btn btn-active-light-primary btn-color-gray-400 me-3">Discard</a>
+                    <a href="#" class="btn btn-primary">Search</a>
+                </div>
+                <!--end::Action-->               
+            </div>
+            <!--end::Body-->
+        </div>
+        <!--end::Card-->
+    </form>
+    <!--end::Form-->
+</div>

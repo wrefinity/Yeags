@@ -1,0 +1,169 @@
+{% load static %}
+
+<div class="card mb-5 mb-xxl-8">
+    <!--begin::Body-->
+    <div class="card-body pb-0">
+        <!--begin::Header-->
+        <div class="d-flex align-items-center mb-5">
+            <!--begin::User-->
+            <div class="d-flex align-items-center flex-grow-1">
+                <!--begin::Avatar-->
+                <div class="symbol symbol-45px me-5">
+                    <img src="{% static '/assets/media/avatars/300-23.jpg' %}" alt="">     
+                </div>
+                <!--end::Avatar-->
+
+                <!--begin::Info-->
+                <div class="d-flex flex-column">
+                    <a href="#" class="text-gray-900 text-hover-primary fs-6 fw-bold">Nick Logan</a>
+
+                    <span class="text-gray-400 fw-bold">PHP, SQLite, Artisan CLI</span>
+                </div>
+                <!--end::Info-->
+            </div>		 
+            <!--end::User-->             
+
+            <!--begin::Menu-->    
+            <div class="my-0">        
+                <button type="button" class="btn btn-sm btn-icon btn-color-primary btn-active-light-primary" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">
+                    <i class="ki-duotone ki-category fs-6"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span></i>                </button>
+                
+<!--begin::Menu 2-->
+<div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg-light-primary fw-semibold w-200px" data-kt-menu="true">
+    <!--begin::Menu item-->
+    <div class="menu-item px-3">
+        <div class="menu-content fs-6 text-dark fw-bold px-3 py-4">Quick Actions</div>
+    </div>
+    <!--end::Menu item-->
+
+    <!--begin::Menu separator-->
+    <div class="separator mb-3 opacity-75"></div>
+    <!--end::Menu separator-->
+
+    <!--begin::Menu item-->
+    <div class="menu-item px-3">
+        <a href="#" class="menu-link px-3">
+            New Ticket
+        </a>
+    </div>
+    <!--end::Menu item-->
+    
+    <!--begin::Menu item-->
+    <div class="menu-item px-3">
+        <a href="#" class="menu-link px-3">
+            New Customer
+        </a>
+    </div>
+    <!--end::Menu item-->
+
+    <!--begin::Menu item-->
+    <div class="menu-item px-3" data-kt-menu-trigger="hover" data-kt-menu-placement="right-start">
+        <!--begin::Menu item-->
+        <a href="#" class="menu-link px-3">
+            <span class="menu-title">New Group</span>
+            <span class="menu-arrow"></span>
+        </a>
+        <!--end::Menu item-->
+
+        <!--begin::Menu sub-->
+        <div class="menu-sub menu-sub-dropdown w-175px py-4">
+            <!--begin::Menu item-->
+            <div class="menu-item px-3">
+                <a href="#" class="menu-link px-3">
+                    Admin Group
+                </a>
+            </div>
+            <!--end::Menu item-->
+
+            <!--begin::Menu item-->
+            <div class="menu-item px-3">
+                <a href="#" class="menu-link px-3">
+                    Staff Group
+                </a>
+            </div>
+            <!--end::Menu item-->
+
+            <!--begin::Menu item-->            
+            <div class="menu-item px-3">
+                <a href="#" class="menu-link px-3">
+                    Member Group
+                </a>
+            </div>
+            <!--end::Menu item-->
+        </div>
+        <!--end::Menu sub-->
+    </div>
+    <!--end::Menu item-->
+
+    <!--begin::Menu item-->
+    <div class="menu-item px-3">
+        <a href="#" class="menu-link px-3">
+            New Contact
+        </a>
+    </div>
+    <!--end::Menu item-->
+
+    <!--begin::Menu separator-->
+    <div class="separator mt-3 opacity-75"></div>
+    <!--end::Menu separator-->
+
+    <!--begin::Menu item-->
+    <div class="menu-item px-3">
+        <div class="menu-content px-3 py-3">
+            <a class="btn btn-primary  btn-sm px-4" href="#">
+                Generate Reports
+            </a>
+        </div>
+    </div>
+    <!--end::Menu item-->
+</div>
+<!--end::Menu 2-->
+            </div>
+            <!--end::Menu-->
+        </div>
+        <!--end::Header-->
+
+        <!--begin::Post-->
+        <div class="mb-5">
+            <!--begin::Text-->
+            <p class="text-gray-800 fw-normal mb-5">
+                Outlines keep you honest. They stop you from indulging in
+                poorly thought-out metaphors about driving and keep you
+                focused on the overall structure of your post
+            </p>
+            <!--end::Text-->
+
+            <!--begin::Toolbar-->
+            <div class="d-flex align-items-center mb-5">    
+                <a href="#" class="btn btn-sm btn-light btn-color-muted btn-active-light-success px-4 py-2 me-4">
+                    <i class="ki-duotone ki-message-text-2 fs-2"><span class="path1"></span><span class="path2"></span><span class="path3"></span></i>                    120
+                </a>
+
+                <a href="#" class="btn btn-sm btn-light btn-color-muted btn-active-light-danger px-4 py-2">
+                    <i class="ki-duotone ki-heart fs-2"><span class="path1"></span><span class="path2"></span></i>                    15
+                </a>
+            </div>
+            <!--end::Toolbar-->
+        </div>
+        <!--end::Post-->
+
+        <!--begin::Separator-->
+        <div class="separator mb-4"></div>
+        <!--end::Separator-->
+
+        <!--begin::Reply input-->
+        <form class="position-relative mb-6">
+            <textarea class="form-control border-0 p-0 pe-10 resize-none min-h-25px" data-kt-autosize="true" rows="1" placeholder="Reply.." data-kt-initialized="1" style="overflow: hidden; overflow-wrap: break-word; height: 25px;"></textarea>
+
+            <div class="position-absolute top-0 end-0 me-n5">                          
+                <span class="btn btn-icon btn-sm btn-active-color-primary pe-0 me-2">
+                    <i class="ki-duotone ki-paper-clip fs-2 mb-3"></i>				</span>
+                
+				<span class="btn btn-icon btn-sm btn-active-color-primary ps-0">
+                    <i class="ki-duotone ki-geolocation fs-2 mb-3"><span class="path1"></span><span class="path2"></span></i>				</span>
+            </div>
+        </form>
+        <!--edit::Reply input-->
+    </div>
+    <!--end::Body-->
+</div>

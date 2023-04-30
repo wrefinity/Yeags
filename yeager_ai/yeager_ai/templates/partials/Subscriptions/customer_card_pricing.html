@@ -1,0 +1,70 @@
+{% load static %}
+
+<div class="card card-flush pt-3 mb-5 mb-lg-10">
+    <!--begin::Card header-->
+    <div class="card-header">
+        <!--begin::Card title-->
+        <div class="card-title">
+            <h2 class="fw-bold">Products</h2>
+        </div>
+        <!--begin::Card title-->
+
+        <!--begin::Card toolbar-->
+        <div class="card-toolbar">
+            <button type="button" class="btn btn-light-primary" data-bs-toggle="modal" data-bs-target="#kt_modal_add_product">Add Product</button>
+        </div>
+        <!--end::Card toolbar-->
+    </div>
+    <!--end::Card header-->
+
+    <!--begin::Card body-->
+    <div class="card-body pt-0">
+         <!--begin::Table wrapper-->
+        <div class="table-responsive">
+            <!--begin::Table-->
+            <div id="kt_subscription_products_table_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer"><div class="table-responsive"><table class="table align-middle table-row-dashed fs-6 fw-semibold gy-4 dataTable no-footer" id="kt_subscription_products_table">
+                <thead>
+                    <tr class="text-start text-muted fw-bold fs-7 text-uppercase gs-0"><th class="min-w-300px sorting_disabled" rowspan="1" colspan="1" style="width: 300px;">Product</th><th class="min-w-100px sorting_disabled" rowspan="1" colspan="1" style="width: 100px;">Qty</th><th class="min-w-150px sorting_disabled" rowspan="1" colspan="1" style="width: 150px;">Total</th><th class="min-w-70px text-end sorting_disabled" rowspan="1" colspan="1" style="width: 70px;">Remove</th></tr>
+                </thead>
+                <tbody class="text-gray-600">
+                                            
+                                            
+                                            
+                                    <tr class="odd">
+                            <td>Beginner Plan</td>
+                            <td>1</td>
+                            <td>149.99 / Month</td>
+                            <td class="text-end">
+                                <!--begin::Delete-->
+                                <a href="#" class="btn btn-icon btn-flex btn-active-light-primary w-30px h-30px me-3" data-bs-toggle="tooltip" data-kt-action="product_remove" aria-label="Delete" data-bs-original-title="Delete" data-kt-initialized="1">
+                                    <i class="ki-duotone ki-trash fs-3"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span></i>                                </a>
+                                <!--end::Delete-->
+                            </td>
+                        </tr><tr class="even">
+                            <td>Pro Plan</td>
+                            <td>1</td>
+                            <td>499.99 / Month</td>
+                            <td class="text-end">
+                                <!--begin::Delete-->
+                                <a href="#" class="btn btn-icon btn-flex btn-active-light-primary w-30px h-30px me-3" data-bs-toggle="tooltip" data-kt-action="product_remove" aria-label="Delete" data-bs-original-title="Delete" data-kt-initialized="1">
+                                    <i class="ki-duotone ki-trash fs-3"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span></i>                                </a>
+                                <!--end::Delete-->
+                            </td>
+                        </tr><tr class="odd">
+                            <td>Team Plan</td>
+                            <td>1</td>
+                            <td>999.99 / Month</td>
+                            <td class="text-end">
+                                <!--begin::Delete-->
+                                <a href="#" class="btn btn-icon btn-flex btn-active-light-primary w-30px h-30px me-3" data-bs-toggle="tooltip" data-kt-action="product_remove" aria-label="Delete" data-bs-original-title="Delete" data-kt-initialized="1">
+                                    <i class="ki-duotone ki-trash fs-3"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span></i>                                </a>
+                                <!--end::Delete-->
+                            </td>
+                        </tr></tbody>
+            </table></div><div class="row"><div class="col-sm-12 col-md-5 d-flex align-items-center justify-content-center justify-content-md-start"></div><div class="col-sm-12 col-md-7 d-flex align-items-center justify-content-center justify-content-md-end"></div></div></div>
+            <!--end::Table-->
+        </div>
+        <!--end::Table wrapper-->
+    </div>
+    <!--end::Card body-->
+</div>

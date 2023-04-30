@@ -1,0 +1,69 @@
+{% extends "base.html" %} 
+{% load slippers %} 
+{% block content %}
+{% comment %} aside goes here  {% endcomment %}
+{% #aside_pro data="db_data"%}
+{% /aside_pro%}
+<div class="wrapper d-flex  flex-column flex-row-fluid" id="kt_wrapper">
+    {% #header heading="Call Center" main="" %}
+    {% /header %}
+    <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
+        <!--begin::Container-->
+        <div class="container-xxl" id="kt_content_container">   
+            {% comment %} Layer one  {% endcomment %}
+            <div class="row g-5 g-xl-10 mb-5 mb-xl-10">
+                {% #in_out_bound bound="InBound" amount="1.2k"  total="935" sub_title="Problem Solved" color="#f1416c"%}
+                {% /in_out_bound %}
+                {% #in_out_bound bound="OutBound" amount="427"  total="386" sub_title="Generated Leads" color="#7239EA" %}
+                {% /in_out_bound %}
+
+                {% #call_plan_upgrade %}
+                {% /call_plan_upgrade %}
+            </div>
+            
+            <div class="row g-5 g-xl-10 mb-5 mb-xl-10">
+                {% #call_by_department %}
+                {% /call_by_department %}
+                {% #call_geography %}
+                {% /call_geography %}
+    
+            </div>
+            <div class="row g-5 g-xl-10 mb-5 mb-xl-10">
+                
+                {% #call_general_stat %}
+                {% /call_general_stat %}
+    
+            </div>
+        
+        </div>
+    </div>
+</div>
+{% endblock content %}
+
+{% block drawer %}
+{% #activity_drawer data="db_data"%}
+{% /activity_drawer%}
+{% #aside_right data="db_data"%}
+{% /aside_right%}
+{% #cart_drawer data="db_data"%}
+{% /cart_drawer%}
+{% #chat_drawer data="db_data"%}
+{% /chat_drawer%}
+{% #scroller data="db_data"%}
+{% /scroller%}
+{% endblock drawer %} 
+
+{% block modal %}
+{% #create_app_modal data="db_data"%}
+{% /create_app_modal%}
+{% #invite_modal data="db_data"%}
+{% /invite_modal%}
+{% #plans_modal data="db_data"%}
+{% /plans_modal%}
+{% #marketing_modal data="db_data"%}
+{% /marketing_modal%}
+{% #user_search_modal data="db_data"%}
+{% /user_search_modal%}
+{% #users_modal data="db_data"%}
+{% /users_modal %}
+{% endblock modal %} 

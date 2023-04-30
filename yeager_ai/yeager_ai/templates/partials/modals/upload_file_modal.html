@@ -1,0 +1,54 @@
+<div class="modal fade" id="kt_modal_upload" tabindex="-1" style="display: none;" aria-hidden="true">
+    <!--begin::Modal dialog-->
+    <div class="modal-dialog modal-dialog-centered mw-650px">
+        <!--begin::Modal content-->
+        <div class="modal-content">
+            <!--begin::Form-->
+            <form class="form" action="none" id="kt_modal_upload_form">
+                <!--begin::Modal header-->
+                <div class="modal-header">
+                    <!--begin::Modal title-->
+                    <h2 class="fw-bold">Upload files</h2> 
+                    <!--end::Modal title-->
+
+                    <!--begin::Close-->
+                    <div class="btn btn-icon btn-sm btn-active-icon-primary" data-bs-dismiss="modal">
+                        <i class="ki-duotone ki-cross fs-1"><span class="path1"></span><span class="path2"></span></i>                    </div>
+                    <!--end::Close-->
+                </div>
+                <!--end::Modal header-->
+
+                <!--begin::Modal body-->
+                <div class="modal-body pt-10 pb-15 px-lg-17">
+                    <!--begin::Input group-->
+                    <div class="form-group">
+                        <!--begin::Dropzone-->
+                        <div class="dropzone dropzone-queue mb-2" id="kt_modal_upload_dropzone">
+                            <!--begin::Controls-->
+                            <div class="dropzone-panel mb-4">
+                                <a class="dropzone-select btn btn-sm btn-primary me-2 dz-clickable">Attach files</a>
+                                <a class="dropzone-upload btn btn-sm btn-light-primary me-2">Upload All</a>
+                                <a class="dropzone-remove-all btn btn-sm btn-light-primary">Remove All</a>
+                            </div>
+                            <!--end::Controls-->
+
+                            <!--begin::Items-->
+                            <div class="dropzone-items wm-200px">
+                                
+                            </div>
+                            <!--end::Items-->
+                        <div class="dz-default dz-message"><button class="dz-button" type="button">Drop files here to upload</button></div></div>
+                        <!--end::Dropzone-->
+
+                        <!--begin::Hint-->
+                        <span class="form-text fs-6 text-muted">Max file size is 1MB per file.</span>
+                        <!--end::Hint-->
+                    </div>
+                    <!--end::Input group-->
+                </div>
+                <!--end::Modal body-->
+            </form>
+            <!--end::Form-->
+        </div>
+    </div>
+</div>
