@@ -123,7 +123,7 @@ class UserLoginView(View):
         user = auth.authenticate(email=email, password=pass1) | auth.authenicate(username=email, password=pass1)
         if user is not None:
             # auth.login(request.user)
-            auth.login(user.username)
+            auth.login(request, user)
             return redirect('home')
         else:
             messages.error(request, "wrong login credentials")
