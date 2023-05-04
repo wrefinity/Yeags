@@ -3,11 +3,14 @@ from django.contrib.auth import get_user_model
 from django.shortcuts import redirect, render
 from django.urls import reverse_lazy
 from django.contrib import auth, messages
+from django.contrib.auth import authenticate, login
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.db import IntegrityError
 from django.contrib.messages.views import SuccessMessageMixin
 from django.urls import reverse
 from django.utils.translation import gettext_lazy as _
 from django.views.generic import DetailView, View, ListView, RedirectView, UpdateView
+from allauth.account.signals import user_signed_up
 
 User = get_user_model()
 
@@ -92,24 +95,27 @@ class UserSignUpView(View):
         pass2 = request.POST["confirm_password"]
         if pass1 != pass2:
             messages.error(request, "password dont match")
-            return redirect("/accounts/login")
+            return redirect("/accounts/signup")
 
         email = request.POST["email"]
         username = request.POST["username"]
         first_name = request.POST["first_name"]
         last_name = request.POST["last_name"]
         try:
-            user = User.objects.get(username=username)
-            messages.info(request, "user exits")
-        except User.DoesNotExit:
-            # Create user and save to the database
-            user = User.objects.create_user(username=username, email=email, password=pass1)
-            # Update fields and then save again
+            user = User.objects.create_user(username=username, email=email,
+                                            password=pass1)
             user.first_name = first_name
             user.last_name = last_name
-            user.name = f"{first_name}  {last_name}" 
+            user.name = f"{first_name}  {last_name}"
             user.save()
-            return redirect("users:login")
+            print("user is", user)
+            user_signed_up.send(sender=User, request=request, user=user)
+            messages.success(request, "registration successful")
+            return redirect("/accounts/signup")
+
+        except IntegrityError:
+            messages.error(request, "user exits")
+            return redirect("/accounts/signup")
 
 
 user_sign_view = UserSignUpView.as_view()
@@ -120,10 +126,12 @@ class UserLoginView(View):
     def post(self, request,  *args, **kwargs):
         pass1 = request.POST["password"]
         email = request.POST["email"]
-        user = auth.authenticate(email=email, password=pass1) | auth.authenicate(username=email, password=pass1)
+        # user = auth.authenticate(request, email=email, password=pass1) | auth.authenticate(
+        #     username=email, password=pass1)
+        user = auth.authenticate(
+            username=email, password=pass1)
         if user is not None:
-            # auth.login(request.user)
-            auth.login(request, user)
+            login(request, user)
             return redirect('home')
         else:
             messages.error(request, "wrong login credentials")
@@ -134,9 +142,10 @@ user_login_view = UserLoginView.as_view()
 
 
 class UserLogoutView(View):
-    def post(self, request,  *args, **kwargs):
+
+    def get(self, request,  *args, **kwargs):
         auth.logout(request)
-        redirect("users:login")
+        return redirect("/accounts/login")
 
 
 user_logout_view = UserLogoutView.as_view()

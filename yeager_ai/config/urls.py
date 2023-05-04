@@ -76,6 +76,7 @@ urlpatterns = [
     # path("accounts/", include("yeager_ai.world.urls")),
     # stripe path
     path("stripe/", include("djstripe.urls", namespace="djstripe")),
+    path('', include("referrals.urls", namespace="referrals")),
     # Your stuff: custom urls includes go here
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 if settings.DEBUG:

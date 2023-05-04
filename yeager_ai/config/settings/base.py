@@ -44,7 +44,7 @@ DATABASES = {
     "default": {'ENGINE': "django.db.backends.postgresql",
                 'NAME': 'project',
                 'USER': 'postgres',
-                'PASSWORD': 'password',
+                'PASSWORD': 'postgres',
                 'HOST': '127.0.0.1',
                 'PORT': '5432',
                 }
@@ -93,12 +93,14 @@ THIRD_PARTY_APPS = [
     "rest_framework.authtoken",
     "corsheaders",
     "drf_spectacular",
+
 ]
 
 LOCAL_APPS = [
     # Your stuff: custom apps go here
     "yeager_ai.users",
     "yeager_ai.world",
+    "referrals.apps.ReferralsConfig"
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
@@ -159,10 +161,11 @@ MIDDLEWARE = [
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.locale.LocaleMiddleware",
     "django.middleware.common.CommonMiddleware",
-    "django.middleware.csrf.CsrfViewMiddleware",
+    # "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "referrals.middleware.ReferralMiddleware",
 ]
 
 # STATIC
@@ -351,7 +354,7 @@ STRIPE_LIVE_SECRET_KEY = (
 )
 STRIPE_TEST_SECRET_KEY = os.environ.get("STRIPE_TEST_SECRET_KEY", "sk_test_XXXXXXXXXX")
 STRIPE_LIVE_MODE = False  # Change to True in production
-DJSTRIPE_WEBHOOK_SECRET = "xxxxxxxx"  # Get it from the section in the Stripe dashboard where you added the webhook endpoint
+DJSTRIPE_WEBHOOK_SECRET = "whsec_b0a332806c0849dab6e8735be32c8460ae8d8f94ae77c99967670c091a56b720"  # Get it from the section in the Stripe dashboard where you added the webhook endpoint
 DJSTRIPE_USE_NATIVE_JSONFIELD = (
     True  # We recommend setting to True for new installations
 )

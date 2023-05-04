@@ -1,0 +1,33 @@
+<p>
+	User: {{request.user}}
+</p>
+<p>
+	Invite Link: <a href="http://127.0.0.1:8001/accounts/signup/?invite_code={{referralProfile.invite_code}}">http://127.0.0.1:8001/accounts/signup/?invite_code={{referralProfile.invite_code}}</a>
+</p>
+<p>
+	Total Earnings: {{ referralProfile.earnings }}
+</p>
+<p>
+	Invite Count: {{referralProfile.invite_count}}
+</p>
+
+<table>
+	<thead>
+<th>Referral</th>
+		<th>Earned Points</th>
+		
+		<th>Amount</th>
+		<th>Date Earned</th>
+	</thead>
+	<tbody>
+		{% for earning in referralProfile.get_earnings %}
+		<tr>
+<td>{{earning.source}}</td>
+<td>{{earning.earned_points}}</td>
+<td>{{earning.amount}}</td>
+<td>{{earning.date_earned}}</td>
+		</tr>
+
+		{% endfor %}
+	</tbody>
+</table>
